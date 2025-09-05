@@ -1,20 +1,54 @@
 """
 $(TYPEDSIGNATURES)
 
-TODO: PRECALCULATE MATRIX OF POINT-TO-POINT A* PATHS DURATION??
+Calculate heuristic distance between two SIPP states using Euclidean distance.
+
+# Arguments
+- `cfg1::Trcd`: Source configuration (row, column, direction)
+- `cfg2::Trcd`: Target configuration (row, column, direction)
+
+# Returns
+- `Float64`: Euclidean distance between the two positions
+
+# Examples
+```julia
+h = state_heuristic(Trcd(1, 1, 0), Trcd(5, 5, 2))
+```
+
+# Notes
+- Uses Euclidean distance for position-based heuristic
+- Direction changes are not included in the heuristic
+- Consider pre-calculating point-to-point A* path durations for better heuristics
 """
 function state_heuristic(cfg1::Trcd, cfg2::Trcd)
     # Making 3 turns is the cost of doing 1 turn in the other direction
     # delta_d = abs(cfg2[3] - cfg1[3]) == 3 ? 1 : abs(cfg2[3] - cfg1[3])
     # return (STEPS_FWD * abs(cfg2[1] - cfg1[1]) + STEPS_FWD * abs(cfg2[2] - cfg1[2]) + STEPS_TRN * delta_d)
 
-    # Euclidian distance
+    # Euclidean distance
     return sqrt((cfg2[1] - cfg1[1])^2 + (cfg2[2] - cfg1[2])^2)
 end
 
 """
 $(TYPEDSIGNATURES)
 
+Calculate heuristic distance between two SIPP state contexts.
+
+# Arguments
+- `g1::SIPPStateContext`: Source SIPP state context
+- `g2::SIPPStateContext`: Target SIPP state context
+
+# Returns
+- `Float64`: Euclidean distance between the two state configurations
+
+# Examples
+```julia
+h = state_heuristic(context1, context2)
+```
+
+# Notes
+- Delegates to the configuration-based state_heuristic function
+- Used in SIPP algorithm for state prioritization
 """
 state_heuristic(g1::SIPPStateContext, g2::SIPPStateContext) =
     state_heuristic(g1.cfg, g2.cfg)
@@ -23,13 +57,32 @@ state_heuristic(g1::SIPPStateContext, g2::SIPPStateContext) =
 """
 $(TYPEDSIGNATURES)
 
-Implements `Conditions for Avoiding Node Re-Expansions for Bounded Suboptimal Search` (2019) by
-Jingwei Chen and Nathan R. Sturtevant.
+Improved heuristic function for bounded suboptimal search algorithms.
 
-Φ(h, g) improves on the traditional f in A* which is normally f = 1/ϵ * g + h .
+# Arguments
+- `h::Float64`: Heuristic cost estimate
+- `g::Float64`: Actual cost from start to current state
+- `ϵ::Float64`: Suboptimality bound (ϵ ≥ 1, where 1 = optimal)
 
-We use the _Convex Downward Parabola_ from section 5.2
-TODO: What form does the convexity take? How to test?
+# Returns
+- `Float64`: Improved f-score for bounded suboptimal search
+
+# Examples
+```julia
+f_score = Φ(heuristic_cost, actual_cost, 1.1)  # 10% suboptimal
+```
+
+# Notes
+Implements the "Convex Downward Parabola" from:
+"Conditions for Avoiding Node Re-Expansions for Bounded Suboptimal Search" (2019)
+by Jingwei Chen and Nathan R. Sturtevant.
+
+This function improves on traditional A* f-score (f = g + h) by providing
+better bounds for suboptimal search algorithms. The convexity properties
+help avoid unnecessary node re-expansions.
+
+# References
+- Chen, J., & Sturtevant, N. R. (2019). Conditions for Avoiding Node Re-Expansions for Bounded Suboptimal Search.
 """
 Φ(h, g, ϵ) = (g + (2 * ϵ - 1) * h + sqrt((g - h)^2 + 4 * ϵ * g * h)) / (2 * ϵ)
 
@@ -90,7 +143,7 @@ function anytime_SIPP(
     time_shift::Int64,
     list_allocation_paths,
     sippctx::SIPP_CalculationContext;
-    iterationlimit::Int64 = typemax(Int64),
+    iterationlimit::Int64=typemax(Int64),
 )
 
     # Initialise the calculation context
@@ -108,20 +161,20 @@ function anytime_SIPP(
 
     # The starting state is initialised (using the Φ function to optimise the number of re-expansions)
     # The source comes from nowhere and starts moving at time 0.
-    src_state = SIPPState(cfg = src, interval = (0, 0), isoptimal = true)
+    src_state = SIPPState(cfg=src, interval=(0, 0), isoptimal=true)
     g_score = 0
     h_score = Φ(state_heuristic(src, dst), g_score, ϵ_start)
     f_score = g_score + ϵ_prime * h_score
     sippctx.exploredstates[src_state] =
-        SIPPStateContext(; g_score, h_score, f_score, camefrom = nothing)
+        SIPPStateContext(; g_score, h_score, f_score, camefrom=nothing)
     enqueue!(PQ_open, src_state, sippctx.exploredstates[src_state].f_score)
 
-    dst_state = SIPPState(cfg = dst, interval = (0, 0), isoptimal = true)
+    dst_state = SIPPState(cfg=dst, interval=(0, 0), isoptimal=true)
     g_score = STEPS_IMPOSSIBLE
     h_score = Φ(state_heuristic(dst, dst), g_score, ϵ_start)
     f_score = g_score + ϵ_prime * h_score
     sippctx.exploredstates[dst_state] =
-        SIPPStateContext(; g_score, h_score, f_score, camefrom = dst_state)
+        SIPPStateContext(; g_score, h_score, f_score, camefrom=dst_state)
 
 
     result_paths = []
@@ -153,7 +206,7 @@ function anytime_SIPP(
             PQ_inconsistent,
             time_shift,
             sippctx;
-            iterationlimit = iterationlimit,
+            iterationlimit=iterationlimit,
         )
 
         @debug """
@@ -175,10 +228,10 @@ function anytime_SIPP(
         if isempty(PQ_open)
             break
         else
-            d = round(minimum(append!(gh_PQ_open, gh_PQ_inconsistent)); digits = 3)
+            d = round(minimum(append!(gh_PQ_open, gh_PQ_inconsistent)); digits=3)
             if d != 0.0
                 ϵ_prime = min(ϵ_prime, sippctx.exploredstates[dst_state].g_score / d)
-                ϵ_prime = round(ϵ_prime; digits = 3)
+                ϵ_prime = round(ϵ_prime; digits=3)
                 @debug "New calculated ϵ = $(ϵ_prime). Sizes PQ_open = $(length(PQ_open)), PQ_closed = $(length(PQ_inconsistent))\n"
             end
         end
@@ -198,7 +251,7 @@ function anytime_SIPP(
     time_shift::Int64,
     list_allocation_paths,
     sippctx::SIPP_CalculationContext;
-    iterationlimit::Int64 = typemax(Int64),
+    iterationlimit::Int64=typemax(Int64),
 )
     return anytime_SIPP(
         as_rcd(task.start),
@@ -208,7 +261,7 @@ function anytime_SIPP(
         time_shift,
         list_allocation_paths,
         sippctx;
-        iterationlimit = iterationlimit,
+        iterationlimit=iterationlimit,
     )
 end
 
@@ -224,7 +277,7 @@ function improve_path!(
     PQ_inconsistent,
     time_shift::Int64,
     sippctx::SIPP_CalculationContext;
-    iterationlimit::Int64 = typemax(Int64),
+    iterationlimit::Int64=typemax(Int64),
 )
 
     # The CLOSED queue keeps track of fully explored (with optimal or sub-optimal scores)
@@ -269,7 +322,7 @@ function improve_path!(
         src_safe_intervals = list_safe_intervals(
             sippctx.occupancy[cur_row, cur_col],
             sippctx;
-            time_shift = time_shift,
+            time_shift=time_shift,
         )
 
         # s represents an AGV being at a specific location at a specific time. It is therefore located in a unique interval.
@@ -331,7 +384,7 @@ function improve_path!(
 
             # We can extract the exact intersection of the 2 intervals. new_safe_intervals is NOT shifted.
             new_safe_intervals =
-                list_safe_intervals(clean_busy_intervals, sippctx; time_shift = time_shift)
+                list_safe_intervals(clean_busy_intervals, sippctx; time_shift=time_shift)
 
             # if no interval, then no point in continuing
             isempty(new_safe_intervals) && continue
@@ -390,9 +443,9 @@ function improve_path!(
                 # _safe_ interval and not from where the AGV is currently located in time.
                 for status ∈ optimal_status
                     s_prime = SIPPState(;
-                        cfg = s_prime_rcd,
-                        interval = (s_prime_safeintv_beg, s_prime_safeintv_end),
-                        isoptimal = status,
+                        cfg=s_prime_rcd,
+                        interval=(s_prime_safeintv_beg, s_prime_safeintv_end),
+                        isoptimal=status,
                     )
 
                     # If the state has never been seen before
@@ -400,10 +453,10 @@ function improve_path!(
                         # Mark explored
                         # Keep track of its source and scores in a node
                         sippctx.exploredstates[s_prime] = SIPPStateContext(;
-                            g_score = STEPS_IMPOSSIBLE,
-                            h_score = STEPS_IMPOSSIBLE,
-                            f_score = STEPS_IMPOSSIBLE,
-                            camefrom = cur,
+                            g_score=STEPS_IMPOSSIBLE,
+                            h_score=STEPS_IMPOSSIBLE,
+                            f_score=STEPS_IMPOSSIBLE,
+                            camefrom=cur,
                         )
                         @debug "    Creating SIPPState $(s_prime_rcdt) - all scores = $(STEPS_IMPOSSIBLE) - opt. = $(status)\n"
                     end

@@ -1,14 +1,29 @@
 """
 $(TYPEDSIGNATURES)
 
-Initialise a list of plans for each AGV.
-The first plan is to stay on their starting location to avoid messing arond with indices when iterating.
-This first plan has no reason to ever be changed / replanned.
-The first step of the plan is for the AGV to be at a spot and remain there immobile.
+Initialize initial plans for each AGV in the fleet.
+
+# Arguments
+- `list_AGVs::Vector{TAGV}`: List of AGVs to create initial plans for
+
+# Returns
+- `Vector{TPlan}`: List of initial plans, one per AGV
+
+# Examples
+```julia
+agvs = [create_agv("AGV1", start_pos), create_agv("AGV2", start_pos)]
+plans = create_initial_plans(agvs)
+```
+
+# Notes
+- Each AGV gets an initial plan to stay at its starting location
+- The first plan step keeps the AGV immobile at its starting position
+- This avoids index management issues during iteration
+- Initial plans are never changed or replanned
 """
 function create_initial_plans(list_AGVs::Vector{TAGV})::Vector{TPlan}
     AGVs_plans = TPlan[]
-    for a ∈ 1:length(list_AGVs)
+    for a in 1:length(list_AGVs)
         agv = list_AGVs[a]
 
         src_rcdt = as_rcdt(agv, 1)
@@ -26,13 +41,31 @@ end
 """
 $(TYPEDSIGNATURES)
 
-TODO: complete paths are useless. Should only have a list after time_shift. Preallocate return list?
+Extract paths from a plan that occur after the replanning window.
+
+# Arguments
+- `plan::TPlan`: The plan to extract paths from
+- `replanning_window_beg::Int64`: Start time of replanning window
+
+# Returns
+- `Vector{TPath_rcdt}`: List of paths that occur after the replanning window
+
+# Examples
+```julia
+paths = enumerate_paths(agv_plan, 100)
+```
+
+# Notes
+- Only includes paths that end after the replanning window begins
+- Includes the path to parking if it exists
+- Used for collision detection and path coordination
+- Consider pre-allocating return list for better performance
 """
 function enumerate_paths(plan::TPlan, replanning_window_beg::Int64)::Vector{TPath_rcdt}
     l_rcdt = TPath_rcdt[]
 
-    for s ∈ plan.steps
-        if !isempty(s.path) && s.path[end][4] ≥ replanning_window_beg
+    for s in plan.steps
+        if !isempty(s.path) && s.path[end][4] >= replanning_window_beg
             push!(l_rcdt, s.path)
         end
     end
@@ -81,13 +114,13 @@ function plan_single_parking(
 
     # If a plan is found, add it to the list of allocation plans (w/ parkings)
     if length(path_rcdt) > 0
-        @debug  """
-                $(stimer())        --- plan_single_parking: Allocating $(parking.ID) (final time: $(path_t))
-                """
+        @debug """
+               $(stimer())        --- plan_single_parking: Allocating $(parking.ID) (final time: $(path_t))
+               """
         @assert path_rcdt_is_stricly_increasing(path_rcdt)
-                """
-                The path $(path_rcdt) from $(src) to the parking $(parking) is malformmed with times not strictly increasing
-                """
+        """
+        The path $(path_rcdt) from $(src) to the parking $(parking) is malformmed with times not strictly increasing
+        """
 
         return path_rcdt, path_final_t
     else
@@ -124,9 +157,9 @@ function create_initial_parkings_allocation!(list_AGVs::Vector{TAGV}, AGVs_plans
         best_AGV = best_pair[2]
         # best_time = list_parking_times[best_pair]
 
-        @debug  """
-                $(stimer())    --- Initialise parkings. AGV: $(best_AGV) chooses parking: $(best_parking) (cost: $(best_time))
-                """
+        @debug """
+               $(stimer())    --- Initialise parkings. AGV: $(best_AGV) chooses parking: $(best_parking) (cost: $(best_time))
+               """
 
         src_rcdt = as_rcdt(AGVs_plans[best_AGV].steps[end].task.target, AGVs_plans[best_AGV].steps[end].time_completed)
 
@@ -135,9 +168,9 @@ function create_initial_parkings_allocation!(list_AGVs::Vector{TAGV}, AGVs_plans
 
         # If a plan is found, add it to the list of allocation plans (w/ parkings)
         if length(path_c) > 0
-            @debug  """
-                    $(stimer())    --- Initialise parkings. AGV: $(best_parking) has path to parking: $(best_AGV) (final time: $(path_t))
-                    """
+            @debug """
+                   $(stimer())    --- Initialise parkings. AGV: $(best_parking) has path to parking: $(best_AGV) (final time: $(path_t))
+                   """
         else
             @error "$(stimer()) No transit to parking\n"
         end
@@ -232,9 +265,9 @@ function replan_agv_from_time(
             append!(step_path, path_rcdt)
             step_time_completed = path_t
 
-            @info   """
-                    $(stimer())     Success of AGV $(AGV_to_plan) to transit from its task $(s-1) to its task $(s). Transit size: $(length(path_rcdt))
-                    """
+            @info """
+                  $(stimer())     Success of AGV $(AGV_to_plan) to transit from its task $(s-1) to its task $(s). Transit size: $(length(path_rcdt))
+                  """
         else
             @error """
                     $(stimer())     ERROR - AGV $(AGV_to_plan) NO transit from its task $(s-1) to its task $(s). Transit size: $(length(path_rcdt))
@@ -381,9 +414,9 @@ function full_allocation(
     list_AGVs::Vector{TAGV},
     n_tasks::Int64,
     ctx::TContext;
-    use_fixed_tasks = TTask[],
-    queue_size = 10,
-    algo::AbstractPathPlanning = AnytimeSIPP(),
+    use_fixed_tasks=TTask[],
+    queue_size=10,
+    algo::AbstractPathPlanning=AnytimeSIPP(),
 )
 
     tick()
@@ -533,7 +566,7 @@ function full_allocation(
         # Adjust the the duration of the best_AGV (otherwise would still be at the value before
         # allocation) and sort in decreasing order.
         duration_allocated_tasks[best_AGV] = replanning_window_end
-        planning_order = sortperm(duration_allocated_tasks, rev = true)
+        planning_order = sortperm(duration_allocated_tasks, rev=true)
 
         @info @sprintf(
             "%s\n%s    Replanning in the following order: %s\n",

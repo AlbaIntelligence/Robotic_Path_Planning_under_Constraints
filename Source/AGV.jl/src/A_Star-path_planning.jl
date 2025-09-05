@@ -24,6 +24,26 @@ end
 """
 $(TYPEDSIGNATURES)
 
+Calculate A* heuristic between two vertices using Manhattan distance and direction change cost.
+
+# Arguments
+- `v1::Int64`: Source vertex index
+- `v2::Int64`: Target vertex index
+- `ctx::TContext`: Context containing graph information
+
+# Returns
+- `Float64`: Heuristic cost estimate combining distance and direction change
+
+# Examples
+```julia
+h = astar_heuristic(1, 100, context)
+```
+
+# Notes
+The heuristic combines:
+- Manhattan distance (row and column differences) weighted by forward movement cost
+- Direction change cost (turning penalty)
+- Handles wraparound for direction changes (3 steps = 1 step in opposite direction)
 """
 function astar_heuristic(v1, v2, ctx::TContext)
     r1, c1, d1 = unpack(v2c_rcd(v1, ctx))
@@ -39,12 +59,32 @@ end
 """
 $(TYPEDSIGNATURES)
 
-** Arguments
+Core A* algorithm implementation with priority queue and closed set management.
 
-g: the graph
-goal: the end vertex
-open_set: an initialized heap containing the active vertices
-calctx::AbstractCalculationContext
+# Arguments
+- `g::SimpleWeightedDiGraph`: The graph to search
+- `goal::Int64`: Target vertex index
+- `open_set::PriorityQueue`: Priority queue containing vertices to explore
+- `calctx::AbstractCalculationContext`: Calculation context with scores and parent tracking
+
+# Returns
+- `Vector{Int64}`: Path from start to goal, or zeros if no path found
+
+# Algorithm
+1. While open set is not empty:
+   - Dequeue vertex with lowest f-score
+   - If goal reached, reconstruct and return path
+   - Mark current vertex as closed
+   - For each neighbor:
+     - Skip if already closed
+     - Calculate tentative g-score
+     - Update if better path found
+     - Add to open set with priority
+
+# Notes
+- Uses f-score (g + h) for vertex prioritization
+- Maintains closed set to avoid revisiting vertices
+- Returns empty path (zeros) if no solution exists
 """
 function astar_impl!(g, goal, open_set, calctx::AbstractCalculationContext)
 
@@ -79,11 +119,33 @@ end
 """
 $(TYPEDSIGNATURES)
 
-Return a vector of edges comprising the shortest path between vertices `s` and `t`
-using the [A* search algorithm](http://en.wikipedia.org/wiki/A%2A_search_algorithm).
-An optional heuristic function and edge distance matrix may be supplied. If missing,
-the distance matrix is set to [`LightGraphs.DefaultDistance`](@ref) and the heuristic is set to
-`n -> 0`.
+Find shortest path between two vertices using A* search algorithm.
+
+# Arguments
+- `g::SimpleWeightedDiGraph`: The graph to search
+- `src::Int64`: Source vertex index
+- `dst::Int64`: Destination vertex index
+- `calctx::AbstractCalculationContext`: Pre-initialized calculation context
+
+# Returns
+- `Vector{Int64}`: Path from source to destination, or zeros if no path found
+
+# Examples
+```julia
+path = astar!(graph, start_vertex, goal_vertex, context)
+if path[1] != 0
+    println("Path found with $(length(path)) vertices")
+else
+    println("No path found")
+end
+```
+
+# Notes
+- Uses Manhattan distance heuristic with direction change costs
+- Requires pre-initialized calculation context with proper bounds
+- Returns zeros array if no path exists
+- Path vertices are in reverse order (destination to source)
+- Initializes all scores to impossible cost and resets closed set
 """
 function astar!(
     g::SimpleWeightedDiGraph,
@@ -92,12 +154,11 @@ function astar!(
     calctx::AbstractCalculationContext,
 )
 
-    # if we do checkbounds here, we can use @inbounds in a_star_impl!
-    # checkbounds(distmx, Base.OneTo(nv(g)), Base.OneTo(nv(g)))
-
+    # Initialize priority queue with source vertex
     open_set = PriorityQueue{Int64,Int64}()
     enqueue!(open_set, src, 0)
 
+    # Reset calculation context for new search
     calctx.closed_set[:] .= false
     calctx.g_score[:] .= COST_IMPOSSIBLE
     calctx.g_score[src] = 0
