@@ -6,6 +6,7 @@
 **/Flatland*/*
 **/*.code-workspace
 **/backup.git.history
+**/backup.history
 
 # Drafts
 **/*.aux

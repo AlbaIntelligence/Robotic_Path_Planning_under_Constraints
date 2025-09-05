@@ -1,0 +1,46 @@
+name = "AGV"
+uuid = "e3404f7a-38fe-483b-93cf-69a2d5d8f3cc"
+authors = ["Emmanuel-R8 <emmanuel.rialland@gmail.com> and contributors"]
+version = "0.2.0"
+
+[deps]
+Animations = "27a7e980-b3e6-11e9-2bcd-0b925532e340"
+AutomaticDocstrings = "70b36510-7dee-11e9-28d4-77afe9445f67"
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+DataStructures = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+Debugger = "31a5f54b-26ea-5ae9-a837-f05ce5417438"
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
+DocStringExtensions = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+DocumenterLaTeX = "cd674d7a-5f81-5cf3-af33-235ef1834b99"
+DocumenterTools = "35a29f4d-8980-5a13-9543-d66fff28ecb8"
+FileIO = "5789e2e9-d7fb-5bc7-8068-2c6fae9b9549"
+IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
+JLD2 = "033835bb-8acc-5ee8-8aae-3f567f8a3819"
+Javis = "78b212ba-a7f9-42d4-b726-60726080707e"
+LightGraphs = "093fc24a-ae57-5d10-9952-331d41423f4d"
+Logging = "56ddb016-857b-54e1-b83d-db4d58db5568"
+Luxor = "ae8d54c2-7ccd-5906-9d76-62fc9837b5bc"
+OffsetArrays = "6fe1bfb0-de20-5000-8ca7-80f57d26f881"
+PProf = "e4faabce-9ead-11e9-39d9-4379958e3056"
+Parameters = "d96e819e-fc66-5662-9728-84c9c7592b0a"
+Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
+Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+Profile = "9abbd945-dff8-562f-b5e8-e1ebf5ef1b79"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
+SimpleWeightedGraphs = "47aef6b3-ad0c-573a-a1e2-d07658019622"
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+SpecialFunctions = "276daf66-3868-5448-9aa4-cd146d93841b"
+ThreadsX = "ac1d9e8a-700a-412c-b207-f0111f4b6c0d"
+TickTock = "9ff05d80-102d-5586-aa04-3a8bd1a90d20"
+
+[compat]
+Distributions = "0.25"
+julia = "1.6"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
