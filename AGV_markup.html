@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<HTML lang = "en">
+<HEAD>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+
+<style>
+pre.hljl {
+    border: 1px solid #ccc;
+    margin: 5px;
+    padding: 5px;
+    overflow-x: auto;
+    color: rgb(68,68,68); background-color: rgb(251,251,251); }
+pre.hljl > span.hljl-t { }
+pre.hljl > span.hljl-w { }
+pre.hljl > span.hljl-e { }
+pre.hljl > span.hljl-eB { }
+pre.hljl > span.hljl-o { }
+pre.hljl > span.hljl-k { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kc { color: rgb(59,151,46); font-style: italic; }
+pre.hljl > span.hljl-kd { color: rgb(214,102,97); font-style: italic; }
+pre.hljl > span.hljl-kn { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kp { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kr { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kt { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-n { }
+pre.hljl > span.hljl-na { }
+pre.hljl > span.hljl-nb { }
+pre.hljl > span.hljl-nbp { }
+pre.hljl > span.hljl-nc { }
+pre.hljl > span.hljl-ncB { }
+pre.hljl > span.hljl-nd { color: rgb(214,102,97); }
+pre.hljl > span.hljl-ne { }
+pre.hljl > span.hljl-neB { }
+pre.hljl > span.hljl-nf { color: rgb(66,102,213); }
+pre.hljl > span.hljl-nfm { color: rgb(66,102,213); }
+pre.hljl > span.hljl-np { }
+pre.hljl > span.hljl-nl { }
+pre.hljl > span.hljl-nn { }
+pre.hljl > span.hljl-no { }
+pre.hljl > span.hljl-nt { }
+pre.hljl > span.hljl-nv { }
+pre.hljl > span.hljl-nvc { }
+pre.hljl > span.hljl-nvg { }
+pre.hljl > span.hljl-nvi { }
+pre.hljl > span.hljl-nvm { }
+pre.hljl > span.hljl-l { }
+pre.hljl > span.hljl-ld { color: rgb(148,91,176); font-style: italic; }
+pre.hljl > span.hljl-s { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sa { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sb { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sc { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sd { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sdB { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sdC { color: rgb(201,61,57); }
+pre.hljl > span.hljl-se { color: rgb(59,151,46); }
+pre.hljl > span.hljl-sh { color: rgb(201,61,57); }
+pre.hljl > span.hljl-si { }
+pre.hljl > span.hljl-so { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sr { color: rgb(201,61,57); }
+pre.hljl > span.hljl-ss { color: rgb(201,61,57); }
+pre.hljl > span.hljl-ssB { color: rgb(201,61,57); }
+pre.hljl > span.hljl-nB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nbB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nfB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nh { color: rgb(59,151,46); }
+pre.hljl > span.hljl-ni { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nil { color: rgb(59,151,46); }
+pre.hljl > span.hljl-noB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-oB { color: rgb(102,102,102); font-weight: bold; }
+pre.hljl > span.hljl-ow { color: rgb(102,102,102); font-weight: bold; }
+pre.hljl > span.hljl-p { }
+pre.hljl > span.hljl-c { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-ch { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cm { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cp { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cpB { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cs { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-csB { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-g { }
+pre.hljl > span.hljl-gd { }
+pre.hljl > span.hljl-ge { }
+pre.hljl > span.hljl-geB { }
+pre.hljl > span.hljl-gh { }
+pre.hljl > span.hljl-gi { }
+pre.hljl > span.hljl-go { }
+pre.hljl > span.hljl-gp { }
+pre.hljl > span.hljl-gs { }
+pre.hljl > span.hljl-gsB { }
+pre.hljl > span.hljl-gt { }
+</style>
+
+
+
+  <style type="text/css">
+  @font-face {
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+}
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; /* 2 */
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0; /* 1 */
+  padding: 0; /* 2 */
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  font-family: monospace, monospace;
+  font-size : 0.8em;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+thead th {
+    border-bottom: 1px solid black;
+    background-color: white;
+}
+tr:nth-child(odd){
+  background-color: rgb(248,248,248);
+}
+
+
+/*
+* Skeleton V2.0.4
+* Copyright 2014, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 12/29/2014
+*/
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; }
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0; }
+}
+@media (min-width: 550px) {
+  .container {
+    width: 80%; }
+  .column,
+  .columns {
+    margin-left: 4%; }
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0; }
+
+  .one.column,
+  .one.columns                    { width: 4.66666666667%; }
+  .two.columns                    { width: 13.3333333333%; }
+  .three.columns                  { width: 22%;            }
+  .four.columns                   { width: 30.6666666667%; }
+  .five.columns                   { width: 39.3333333333%; }
+  .six.columns                    { width: 48%;            }
+  .seven.columns                  { width: 56.6666666667%; }
+  .eight.columns                  { width: 65.3333333333%; }
+  .nine.columns                   { width: 74.0%;          }
+  .ten.columns                    { width: 82.6666666667%; }
+  .eleven.columns                 { width: 91.3333333333%; }
+  .twelve.columns                 { width: 100%; margin-left: 0; }
+
+  .one-third.column               { width: 30.6666666667%; }
+  .two-thirds.column              { width: 65.3333333333%; }
+
+  .one-half.column                { width: 48%; }
+
+  /* Offsets */
+  .offset-by-one.column,
+  .offset-by-one.columns          { margin-left: 8.66666666667%; }
+  .offset-by-two.column,
+  .offset-by-two.columns          { margin-left: 17.3333333333%; }
+  .offset-by-three.column,
+  .offset-by-three.columns        { margin-left: 26%;            }
+  .offset-by-four.column,
+  .offset-by-four.columns         { margin-left: 34.6666666667%; }
+  .offset-by-five.column,
+  .offset-by-five.columns         { margin-left: 43.3333333333%; }
+  .offset-by-six.column,
+  .offset-by-six.columns          { margin-left: 52%;            }
+  .offset-by-seven.column,
+  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+  .offset-by-eight.column,
+  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+  .offset-by-nine.column,
+  .offset-by-nine.columns         { margin-left: 78.0%;          }
+  .offset-by-ten.column,
+  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+  .offset-by-eleven.column,
+  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+
+  .offset-by-one-third.column,
+  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+  .offset-by-two-thirds.column,
+  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+
+  .offset-by-one-half.column,
+  .offset-by-one-half.columns     { margin-left: 52%; }
+
+}
+html {
+  font-size: 62.5%; }
+body {
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222; }
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 300; }
+h1 { font-size: 3.6rem; line-height: 1.2;  letter-spacing: -.1rem;}
+h2 { font-size: 3.4rem; line-height: 1.25; letter-spacing: -.1rem; }
+h3 { font-size: 3.2rem; line-height: 1.3;  letter-spacing: -.1rem; }
+h4 { font-size: 2.8rem; line-height: 1.35; letter-spacing: -.08rem; }
+h5 { font-size: 2.4rem; line-height: 1.5;  letter-spacing: -.05rem; }
+h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
+
+p {
+  margin-top: 0; }
+a {
+  color: #1EAEDB; }
+a:hover {
+  color: #0FA0CE; }
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box; }
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  color: #333;
+  border-color: #888;
+  outline: 0; }
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  color: #FFF;
+  background-color: #33C3F0;
+  border-color: #33C3F0; }
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  color: #FFF;
+  background-color: #1EAEDB;
+  border-color: #1EAEDB; }
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  height: 38px;
+  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px; }
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #33C3F0;
+  outline: 0; }
+label,
+legend {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600; }
+fieldset {
+  padding: 0;
+  border-width: 0; }
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline; }
+label > .label-body {
+  display: inline-block;
+  margin-left: .5rem;
+  font-weight: normal; }
+ul {
+  list-style: circle; }
+ol {
+  list-style: decimal; }
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%; }
+li > p {margin : 0;}
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1; }
+th:first-child,
+td:first-child {
+  padding-left: 0; }
+th:last-child,
+td:last-child {
+  padding-right: 0; }
+button,
+.button {
+  margin-bottom: 1rem; }
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: 1.5rem; }
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  margin-bottom: 1.0rem; }
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box; }
+.u-max-full-width {
+  max-width: 100%;
+  box-sizing: border-box; }
+.u-pull-right {
+  float: right; }
+.u-pull-left {
+  float: left; }
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid #E1E1E1; }
+.container:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre.hljl {
+  margin: 0 0 10px;
+  display: block;
+  background: #f5f5f5;
+  border-radius: 4px;
+  padding : 5px;
+}
+
+pre.output {
+  background: #ffffff;
+}
+
+pre.code {
+  background: #ffffff;
+}
+
+pre.julia-error {
+  color : red
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+
+@media (min-width: 400px) {}
+@media (min-width: 550px) {}
+@media (min-width: 750px) {}
+@media (min-width: 1000px) {}
+@media (min-width: 1200px) {}
+
+h1.title {margin-top : 20px}
+img {max-width : 100%}
+div.title {text-align: center;}
+
+  </style>
+</HEAD>
+
+<BODY>
+  <div class ="container">
+    <div class = "row">
+      <div class = "col-md-12 twelve columns">
+        <div class="title">
+
+
+
+        </div>
+
+        <hr />
+<p>title: &quot;Algorithm of Multi-AGVs Flow Optimisation&quot; author: &quot;Emmanuel RIALLAND - ALBA INTELLIGENCE HONG KONG&quot; date: 2021-04-02 weave<em>options:     doctype: pandoc2pdf     pandoc</em>options: numbersections     pandoc_options: number-sections     cache: all     wrap: true –-</p>
+<h1>&#91;TODO&#93;</h1>
+<ul>
+<li><p>&#91;TODO: Consider variants to A*&#93;</p>
+</li>
+</ul>
+<h1>NOTES</h1>
+<ul>
+<li><p>Single planning &#40;next task allocation&#41;: matrix 2D because only sorting by distance &#40;cost &#61; time&#41; without considering collisions.</p>
+</li>
+<li><p>Multiple planning: 3D </p>
+</li>
+<li><p class="math">\[
+T_{Max}
+\]</p>
+<p>is currently fixed at 300s. It could just be a minimum to be dynamically increased if A* search is unsuccessful.</p>
+</li>
+</ul>
+
+
+<pre class='hljl'>
+<span class='hljl-cs'># HARDCODED IN SECONDS. ALL SPEEDS ARE MULTIPLES.</span><span class='hljl-t'>
+</span><span class='hljl-cs'># THIS WAY: TURN = 1 UNIT. BCK = 2 UNITS. FWD = 4 UNITS.</span>
+</pre>
+
+
+
+
+
+<pre class='hljl'>
+<span class='hljl-n'>Tmax</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>5</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-ni'>60</span><span class='hljl-t'>
+</span><span class='hljl-n'>TStep</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nfB'>0.50f0</span><span class='hljl-t'>
+
+</span><span class='hljl-n'>AGVLength</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nfB'>4.0f0</span><span class='hljl-t'>
+</span><span class='hljl-n'>AGVWidth</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nfB'>3.0f0</span>
+</pre>
+
+
+<pre class="output">
+3.0f0
+</pre>
+
+
+<h1>Assumptions</h1>
+<ul>
+<li><p>Everything in SI.</p>
+</li>
+<li><p>Time-step short enough to never have jump-overs even at full speed.</p>
+</li>
+<li><p>AGV dimensions approximated in multiple of twice the grid so that all dimensions / tests can be done as centre location &#43;/- value in integers.</p>
+</li>
+<li><p>AGV dimensions include palettes.</p>
+</li>
+<li><p>Should include security perimeter monitored by AGV?</p>
+</li>
+<li><p>All standardised dimensions in floating point. All simulation dimensions in integers. Type mistakes are easier to pick up.</p>
+</li>
+<li><p>Dimensions of the floor plan is in units of the gridsize.</p>
+</li>
+</ul>
+<h1>Data structures</h1>
+<h2>Data types</h2>
+<h3>Location / Time</h3>
+<p class="math">\[
+TLocation
+\]</p>
+<p>: </p>
+<ul>
+<li><p class="math">\[
+x, y:: Float32
+\]</p>
+<p>for standardised units</p>
+</li>
+<li><p class="math">\[
+simx, simx::Int32
+\]</p>
+<p>for simulation units &#40;more than enough &gt;&#61; 2,000 km at 1 mm resolution&#41;</p>
+</li>
+</ul>
+
+
+<pre class='hljl'>
+<span class='hljl-k'>struct</span><span class='hljl-t'> </span><span class='hljl-n'>TLocation</span><span class='hljl-t'>
+  </span><span class='hljl-n'>x</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-t'>
+  </span><span class='hljl-n'>y</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-t'>
+  </span><span class='hljl-n'>simx</span><span class='hljl-oB'>::</span><span class='hljl-n'>Int32</span><span class='hljl-t'>
+  </span><span class='hljl-n'>simy</span><span class='hljl-oB'>::</span><span class='hljl-n'>Int32</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span>
+</pre>
+
+
+
+<p class="math">\[
+TTime
+\]</p>
+<p>: </p>
+<p>#&#39; - <span class="math">$t:: Float32$</span> for standardised units</p>
+<ul>
+<li><p class="math">\[
+simt::Int32
+\]</p>
+<p>for simulation units &#40;more than enough &gt;&#61; 24 days at 1ms resolution&#41;</p>
+</li>
+</ul>
+
+
+<pre class='hljl'>
+<span class='hljl-k'>struct</span><span class='hljl-t'> </span><span class='hljl-n'>TTime</span><span class='hljl-t'>
+  </span><span class='hljl-n'>t</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-t'>
+  </span><span class='hljl-n'>simt</span><span class='hljl-oB'>::</span><span class='hljl-n'>Int32</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span>
+</pre>
+
+
+
+<h3>Direction of an AGV</h3>
+<p class="math">\[
+TDirection
+\]</p>
+<p>:: </p>
+<ul>
+<li><p>Enum: &#91;Up, Down, Left, Right&#93;</p>
+</li>
+</ul>
+
+
+<pre class='hljl'>
+<span class='hljl-nd'>@enum</span><span class='hljl-t'> </span><span class='hljl-n'>TDirection</span><span class='hljl-t'> </span><span class='hljl-k'>begin</span><span class='hljl-t'>
+  </span><span class='hljl-n'>Up</span><span class='hljl-t'>
+  </span><span class='hljl-n'>Down</span><span class='hljl-t'>
+  </span><span class='hljl-n'>Left</span><span class='hljl-t'>
+  </span><span class='hljl-n'>Right</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span>
+</pre>
+
+
+
+<h2>Data structures</h2>
+<h3>Parkings:</h3>
+<ul>
+<li><p>Parking ID</p>
+</li>
+<li><p>Parking location: <span class="math">$TLocation$</span></p>
+</li>
+</ul>
+
+
+<pre class='hljl'>
+<span class='hljl-k'>struct</span><span class='hljl-t'> </span><span class='hljl-n'>TParking</span><span class='hljl-t'>
+  </span><span class='hljl-n'>ID</span><span class='hljl-oB'>::</span><span class='hljl-n'>String</span><span class='hljl-t'>
+  </span><span class='hljl-n'>loc</span><span class='hljl-oB'>::</span><span class='hljl-n'>TLocation</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span>
+</pre>
+
+
+
+<h3>Tasks: Know at algo start</h3>
+<ul>
+<li><p>Task ID</p>
+</li>
+</ul>
+<p>&#91;TODO: Transform to data type&#93;</p>
+<ul>
+<li><p>Location start &#40;<span class="math">$s_j$</span>&#41;: <span class="math">$TLocation$</span>, <span class="math">$onrack$</span>, <span class="math">$level$</span>. <span class="math">$level$</span> only in on racks &#40;<span class="math">$onrack == true$</span>&#41;</p>
+</li>
+<li><p>Location target &#40;<span class="math">$g_j$</span>&#41;: <span class="math">$TLocation$</span>, <span class="math">$onrack$</span>, <span class="math">$level$</span>. <span class="math">$level$</span> only in on racks &#40;<span class="math">$onrack == true$</span>&#41;</p>
+</li>
+</ul>
+
+
+<pre class='hljl'>
+<span class='hljl-k'>struct</span><span class='hljl-t'> </span><span class='hljl-n'>TPalette</span><span class='hljl-t'>
+  </span><span class='hljl-n'>loc</span><span class='hljl-oB'>::</span><span class='hljl-n'>TLocation</span><span class='hljl-t'>
+  </span><span class='hljl-n'>onRack</span><span class='hljl-oB'>::</span><span class='hljl-n'>Bool</span><span class='hljl-t'>
+  </span><span class='hljl-n'>level</span><span class='hljl-oB'>::</span><span class='hljl-n'>Int16</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span><span class='hljl-t'>
+
+</span><span class='hljl-k'>struct</span><span class='hljl-t'> </span><span class='hljl-n'>TTask</span><span class='hljl-t'>
+  </span><span class='hljl-n'>ID</span><span class='hljl-oB'>::</span><span class='hljl-n'>String</span><span class='hljl-t'>
+  </span><span class='hljl-n'>start</span><span class='hljl-oB'>::</span><span class='hljl-n'>TPalette</span><span class='hljl-t'>
+  </span><span class='hljl-n'>target</span><span class='hljl-oB'>::</span><span class='hljl-n'>TPalette</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span>
+</pre>
+
+
+
+<h3>AGV:</h3>
+<ul>
+<li><p>ID number: Known at algo start</p>
+</li>
+<li><p>Initial position: <span class="math">$TLocation$</span> Known at algo start</p>
+</li>
+<li><p>Current position: <span class="math">$TLocation$</span>. </p>
+</li>
+<li><p>Final position: <span class="math">$TLocation$</span>. </p>
+</li>
+<li><p>Final time stamp: <span class="math">$TTime$</span></p>
+</li>
+<li><p>State:</p>
+<ul>
+<li><p class="math">\[
+Direction
+\]</p>
+<p>: <span class="math">$TDirection$</span></p>
+</li>
+<li><p class="math">\[
+isLoaded
+\]</p>
+<p>: <span class="math">$Bool$</span></p>
+</li>
+<li><p class="math">\[
+isSideways
+\]</p>
+<p>:: <span class="math">$Bool$</span> - is the AGV facing a shelf but otherwise ready to go &#40;about to load or after loading, but no idea where to go&#41;. </p>
+</li>
+<li><p>&#91;TODO: More TBD&#93;</p>
+</li>
+</ul>
+</li>
+<li><p>List of tasks as list of tuples allocated to that AGV: Initialised empty</p>
+<ul>
+<li><p>Task ID</p>
+</li>
+<li><p>time <span class="math">$TTime$</span> in simulation units from previous step to reach task. The list is updated at each iteration using the release time calculated by A*. <span class="math">$t = 0$</span> at the start.</p>
+</li>
+</ul>
+</li>
+<li><p>Allocated parking . Full structure for the moment. &#40;Maybe <span class="math">$Parking_{ID}$</span> later?&#41;. </p>
+</li>
+</ul>
+
+
+<pre class='hljl'>
+<span class='hljl-k'>struct</span><span class='hljl-t'> </span><span class='hljl-n'>TAGV</span><span class='hljl-t'>
+  </span><span class='hljl-n'>ID</span><span class='hljl-oB'>::</span><span class='hljl-n'>String</span><span class='hljl-t'>
+  </span><span class='hljl-n'>start</span><span class='hljl-oB'>::</span><span class='hljl-n'>TLocation</span><span class='hljl-t'>
+  </span><span class='hljl-n'>current</span><span class='hljl-oB'>::</span><span class='hljl-n'>TLocation</span><span class='hljl-t'>
+  </span><span class='hljl-n'>target</span><span class='hljl-oB'>::</span><span class='hljl-n'>TLocation</span><span class='hljl-t'>
+
+  </span><span class='hljl-n'>time</span><span class='hljl-oB'>::</span><span class='hljl-n'>TTime</span><span class='hljl-t'>
+
+  </span><span class='hljl-n'>direction</span><span class='hljl-oB'>::</span><span class='hljl-n'>TDirection</span><span class='hljl-t'>
+  </span><span class='hljl-n'>isLoaded</span><span class='hljl-oB'>::</span><span class='hljl-n'>Bool</span><span class='hljl-t'>
+  </span><span class='hljl-n'>isSideways</span><span class='hljl-oB'>::</span><span class='hljl-n'>Bool</span><span class='hljl-t'>
+
+  </span><span class='hljl-n'>listTasks</span><span class='hljl-oB'>::</span><span class='hljl-nf'>Vector</span><span class='hljl-p'>{</span><span class='hljl-n'>TTask</span><span class='hljl-p'>}</span><span class='hljl-t'>
+  </span><span class='hljl-n'>park</span><span class='hljl-oB'>::</span><span class='hljl-n'>TParking</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span>
+</pre>
+
+
+
+<h1>Utility Functions</h1>
+<h2><span class="math">$create\_list\_of\_parkings(n)$</span></h2>
+<p>Create <span class="math">$n$</span> parking positions with:</p>
+<ul>
+<li><p>All values are in standardised dimensions</p>
+</li>
+<li><p>Number of parkings located next to sources of tasks in proportion of coming orders. Assume that this being done, equal probability of use is acceptable &#40;no priority in the order of filling the parking&#41;.</p>
+</li>
+<li><p>All different</p>
+</li>
+<li><p>At least one per AGV</p>
+</li>
+<li><p>Ensure parking positions do not prevent any traffic once an AGV is occupying it.</p>
+<ul>
+<li><p>WARNING: this is necessary to guarantee that searches will always find solution: </p>
+</li>
+</ul>
+</li>
+</ul>
+<h2><span class="math">$time\_2D(\mathbb{G}, a, b)$</span></h2>
+<p>Time the optimal paths in 2D from location <span class="math">$a$</span> to <span class="math">$b$</span> in a precomputed graph <span class="math">$\mathbb{G}$</span> using A*.</p>
+<p>Returns full path and total execution time.</p>
+<p>All dimensions are in simulation dimensions.</p>
+<h2><span class="math">$scale\_to\_simulation(object)$</span></h2>
+<p>Generic function to rescale the floor plan or object locations from standardised to simulation</p>
+
+
+<pre class='hljl'>
+<span class='hljl-cs'># Convert any Float32 to Int32. Can be used for location or time</span><span class='hljl-t'>
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>factor</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-p'>)</span><span class='hljl-oB'>::</span><span class='hljl-n'>Int32</span><span class='hljl-t'>
+    </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-nf'>Int32</span><span class='hljl-p'>(</span><span class='hljl-nf'>ceil</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-n'>factor</span><span class='hljl-p'>))</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span><span class='hljl-t'>
+
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-oB'>::</span><span class='hljl-n'>TTime</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>tStep</span><span class='hljl-p'>)</span><span class='hljl-oB'>::</span><span class='hljl-n'>TTime</span><span class='hljl-t'>
+    </span><span class='hljl-n'>r</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>deepcopy</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-n'>r</span><span class='hljl-oB'>.</span><span class='hljl-n'>simt</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-oB'>.</span><span class='hljl-n'>t</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>tStep</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-n'>r</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span><span class='hljl-t'>
+
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>loc</span><span class='hljl-oB'>::</span><span class='hljl-n'>TLocation</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-p'>)</span><span class='hljl-oB'>::</span><span class='hljl-n'>TLocation</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>deepcopy</span><span class='hljl-p'>(</span><span class='hljl-n'>loc</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>simx</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>loc</span><span class='hljl-oB'>.</span><span class='hljl-n'>x</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>simy</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>loc</span><span class='hljl-oB'>.</span><span class='hljl-n'>y</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-n'>l</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span><span class='hljl-t'>
+
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>p</span><span class='hljl-oB'>::</span><span class='hljl-n'>TParking</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-p'>)</span><span class='hljl-oB'>::</span><span class='hljl-n'>TParking</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>deepcopy</span><span class='hljl-p'>(</span><span class='hljl-n'>p</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>loc</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>p</span><span class='hljl-oB'>.</span><span class='hljl-n'>loc</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-n'>l</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span><span class='hljl-t'>
+
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>p</span><span class='hljl-oB'>::</span><span class='hljl-n'>TPalette</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-p'>)</span><span class='hljl-oB'>::</span><span class='hljl-n'>TPalette</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>deepcopy</span><span class='hljl-p'>(</span><span class='hljl-n'>p</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>loc</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>p</span><span class='hljl-oB'>.</span><span class='hljl-n'>loc</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-n'>l</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span><span class='hljl-t'>
+
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-oB'>::</span><span class='hljl-n'>TTask</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-p'>)</span><span class='hljl-oB'>::</span><span class='hljl-n'>TTask</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>deepcopy</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>start</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-oB'>.</span><span class='hljl-n'>start</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>target</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-oB'>.</span><span class='hljl-n'>target</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-n'>l</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span><span class='hljl-t'>
+
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-oB'>::</span><span class='hljl-nf'>Vector</span><span class='hljl-p'>{</span><span class='hljl-n'>TTask</span><span class='hljl-p'>},</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-p'>)</span><span class='hljl-oB'>::</span><span class='hljl-nf'>Vector</span><span class='hljl-p'>{</span><span class='hljl-n'>TTask</span><span class='hljl-p'>}</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>deepcopy</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-nf'>map</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-t'> </span><span class='hljl-oB'>-&gt;</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>),</span><span class='hljl-t'> </span><span class='hljl-n'>l</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span><span class='hljl-t'>
+
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>a</span><span class='hljl-oB'>::</span><span class='hljl-n'>TAGV</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>tStep</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-p'>)</span><span class='hljl-oB'>::</span><span class='hljl-n'>TAGV</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>deepcopy</span><span class='hljl-p'>(</span><span class='hljl-n'>a</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>start</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>a</span><span class='hljl-oB'>.</span><span class='hljl-n'>start</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>current</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>a</span><span class='hljl-oB'>.</span><span class='hljl-n'>current</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>target</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>a</span><span class='hljl-oB'>.</span><span class='hljl-n'>target</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>time</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>a</span><span class='hljl-oB'>.</span><span class='hljl-n'>time</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>tStep</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>listTasks</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>a</span><span class='hljl-oB'>.</span><span class='hljl-n'>listTasks</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>park</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>a</span><span class='hljl-oB'>.</span><span class='hljl-n'>park</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-n'>l</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span>
+</pre>
+
+
+<pre class="output">
+scale_to_simulation &#40;generic function with 8 methods&#41;
+</pre>
+
+
+<h2><span class="math">$scale\_to\_standardised(object)$</span></h2>
+<p>Generic function to rescale the floor plan or object locations from simulation to standardised</p>
+
+
+<pre class='hljl'>
+<span class='hljl-cs'># Convert any Float32 to Int32. Can be used for location or time</span><span class='hljl-t'>
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>v</span><span class='hljl-oB'>::</span><span class='hljl-n'>Int32</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>factor</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-p'>)</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-t'>
+    </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-nf'>Float32</span><span class='hljl-p'>(</span><span class='hljl-n'>factor</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-nf'>Float32</span><span class='hljl-p'>(</span><span class='hljl-n'>v</span><span class='hljl-p'>))</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span><span class='hljl-t'>
+
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-oB'>::</span><span class='hljl-n'>TTime</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>tStep</span><span class='hljl-p'>)</span><span class='hljl-oB'>::</span><span class='hljl-n'>TTime</span><span class='hljl-t'>
+    </span><span class='hljl-n'>r</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>deepcopy</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-n'>r</span><span class='hljl-oB'>.</span><span class='hljl-n'>t</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-oB'>.</span><span class='hljl-n'>simt</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>tStep</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-n'>r</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span><span class='hljl-t'>
+
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>loc</span><span class='hljl-oB'>::</span><span class='hljl-n'>TLocation</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-p'>)</span><span class='hljl-oB'>::</span><span class='hljl-n'>TLocation</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>deepcopy</span><span class='hljl-p'>(</span><span class='hljl-n'>loc</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>simx</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>loc</span><span class='hljl-oB'>.</span><span class='hljl-n'>x</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>simy</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>loc</span><span class='hljl-oB'>.</span><span class='hljl-n'>y</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-n'>l</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span><span class='hljl-t'>
+
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>p</span><span class='hljl-oB'>::</span><span class='hljl-n'>TParking</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-p'>)</span><span class='hljl-oB'>::</span><span class='hljl-n'>TParking</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>deepcopy</span><span class='hljl-p'>(</span><span class='hljl-n'>p</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>loc</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>p</span><span class='hljl-oB'>.</span><span class='hljl-n'>loc</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-n'>l</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span><span class='hljl-t'>
+
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>p</span><span class='hljl-oB'>::</span><span class='hljl-n'>TPalette</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-p'>)</span><span class='hljl-oB'>::</span><span class='hljl-n'>TPalette</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>deepcopy</span><span class='hljl-p'>(</span><span class='hljl-n'>p</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>loc</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>p</span><span class='hljl-oB'>.</span><span class='hljl-n'>loc</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-n'>l</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span><span class='hljl-t'>
+
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-oB'>::</span><span class='hljl-n'>TTask</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-p'>)</span><span class='hljl-oB'>::</span><span class='hljl-n'>TTask</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>deepcopy</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>start</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-oB'>.</span><span class='hljl-n'>start</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>target</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-oB'>.</span><span class='hljl-n'>target</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-n'>l</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span><span class='hljl-t'>
+
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-oB'>::</span><span class='hljl-nf'>Vector</span><span class='hljl-p'>{</span><span class='hljl-n'>TTask</span><span class='hljl-p'>},</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-p'>)</span><span class='hljl-oB'>::</span><span class='hljl-nf'>Vector</span><span class='hljl-p'>{</span><span class='hljl-n'>TTask</span><span class='hljl-p'>}</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>deepcopy</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-nf'>map</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-t'> </span><span class='hljl-oB'>-&gt;</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>t</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>),</span><span class='hljl-t'> </span><span class='hljl-n'>l</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span><span class='hljl-t'>
+
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>a</span><span class='hljl-oB'>::</span><span class='hljl-n'>TAGV</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>tStep</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-p'>)</span><span class='hljl-oB'>::</span><span class='hljl-n'>TAGV</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>deepcopy</span><span class='hljl-p'>(</span><span class='hljl-n'>a</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>start</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>a</span><span class='hljl-oB'>.</span><span class='hljl-n'>start</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>current</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>a</span><span class='hljl-oB'>.</span><span class='hljl-n'>current</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>target</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>a</span><span class='hljl-oB'>.</span><span class='hljl-n'>target</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>time</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>a</span><span class='hljl-oB'>.</span><span class='hljl-n'>time</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>tStep</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>listTasks</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>a</span><span class='hljl-oB'>.</span><span class='hljl-n'>listTasks</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>l</span><span class='hljl-oB'>.</span><span class='hljl-n'>park</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>scale_to_standardised</span><span class='hljl-p'>(</span><span class='hljl-n'>a</span><span class='hljl-oB'>.</span><span class='hljl-n'>park</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>gridSize</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-n'>l</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span>
+</pre>
+
+
+<pre class="output">
+scale_to_standardised &#40;generic function with 8 methods&#41;
+</pre>
+
+
+<h1>Algorithm</h1>
+<h2>Expected inputs</h2>
+<p>All inputs are in Standardised dimensions.</p>
+<ul>
+<li><p class="math">\[
+F
+\]</p>
+<p>: <em>Required</em> Floor plan matrix</p>
+</li>
+<li><p class="math">\[
+ListAGV
+\]</p>
+<p>: <em>Required</em>. Check list length &gt;&#61; 1</p>
+</li>
+<li><p class="math">\[
+ListTasks = []
+\]</p>
+<p>: <em>Required</em>. List length can be 0. Must include the list of tasks that are already allocated at the start of the simulation.</p>
+</li>
+<li><p class="math">\[
+ListOfParking = create\_list\_of\_parkings(length(ListAGV))
+\]</p>
+<p>: <em>Optional</em> List of parking slots. Created if missing.</p>
+</li>
+<li><p>Speeds: <em>Required</em> forward, backward, turn</p>
+</li>
+</ul>
+<h2>Wrapping</h2>
+<p>First call point is <span class="math">$optimise\_standardised\_units()$</span>.</p>
+<h3>Timing and Sizing parameters</h3>
+<p>Estimate adequate time step <span class="math">$t_{step}$</span> to scaled matrix to <span class="math">$M$</span>. &#91;CHECK: Default to 200ms&#93;</p>
+<p>Max simulation time <span class="math">$T_{Max}$</span>: This time will be used when planning a path. It has to be long enough so that, given any configuration, A* will find a path from any current position, to achieve any task and go to any parking position. Currently 300s &#40;converted to simulation time using <span class="math">$t_{step}$</span> in <span class="math">${Step}_{Max}$</span>&#41;. Track A* failures to check if long enough. </p>
+<p class="math">\[
+{Step}_{Max} = T_{Max} / t_{step}
+\]</p>
+<p>is the depth of the 3D planning matrix.</p>
+<p class="math">\[
+GridSize
+\]</p>
+<p>: </p>
+<ul>
+<li><p>size of each simulation square. AGV dimensions &#61; &#43;/- 1/2 width, &#43;/- 1/2 length.</p>
+</li>
+<li><p>Ensures never jumps over even max speed.</p>
+</li>
+</ul>
+<h3>Scale everything to Simulation dimensions</h3>
+<p>Rescale all relevant values from Standardised to Simulation: </p>
+<ul>
+<li><p>Matrix of the full floor plan: <span class="math">$M = Rescale(F)$</span> </p>
+</li>
+<li><p>Same for <span class="math">$ListOfParkings = [Parking_i]$</span>, <span class="math">$\alpha_i$</span>, <span class="math">$s_j$</span>, <span class="math">$g_j$</span> to be appropriately scaled given <span class="math">$t_{step}$</span>.</p>
+</li>
+</ul>
+<h3>Call main algo in simulation units</h3>
+<p>Call <span class="math">$optimise_simulation_units()$</span></p>
+<h3>Scale everything back to standardise units</h3>
+<p>Rescale all relevant values from Simulation to Standardised</p>
+<h3>Return</h3>
+<p>Results are returned in Standardised units.</p>
+
+
+<pre class='hljl'>
+<span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>optimise_standardise_units</span><span class='hljl-p'>(</span><span class='hljl-t'>
+    </span><span class='hljl-n'>F</span><span class='hljl-oB'>::</span><span class='hljl-nf'>Matrix</span><span class='hljl-p'>{</span><span class='hljl-n'>Float32</span><span class='hljl-p'>},</span><span class='hljl-t'>
+    </span><span class='hljl-n'>listAGVs</span><span class='hljl-oB'>::</span><span class='hljl-nf'>Vector</span><span class='hljl-p'>{</span><span class='hljl-n'>TAGV</span><span class='hljl-p'>},</span><span class='hljl-t'>
+    </span><span class='hljl-n'>listTasks</span><span class='hljl-oB'>::</span><span class='hljl-nf'>Vector</span><span class='hljl-p'>{</span><span class='hljl-n'>TTask</span><span class='hljl-p'>};</span><span class='hljl-t'>
+    </span><span class='hljl-n'>speedFwd</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nfB'>2.0f0</span><span class='hljl-p'>,</span><span class='hljl-t'>
+    </span><span class='hljl-n'>speedBck</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nfB'>1.0f0</span><span class='hljl-p'>,</span><span class='hljl-t'>
+    </span><span class='hljl-n'>speedTrn</span><span class='hljl-oB'>::</span><span class='hljl-n'>Float32</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nfB'>0.5f0</span><span class='hljl-p'>,</span><span class='hljl-t'>
+    </span><span class='hljl-n'>listParkings</span><span class='hljl-oB'>::</span><span class='hljl-nf'>Vector</span><span class='hljl-p'>{</span><span class='hljl-n'>TParking</span><span class='hljl-p'>}</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>create_list_of_parkings</span><span class='hljl-p'>(</span><span class='hljl-nf'>length</span><span class='hljl-p'>(</span><span class='hljl-n'>listAGVs</span><span class='hljl-p'>)))</span><span class='hljl-t'>
+
+    </span><span class='hljl-cs'># 600 STEPS - MATRIX DEPTH</span><span class='hljl-t'>
+    </span><span class='hljl-n'>StepMax</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>Int32</span><span class='hljl-p'>(</span><span class='hljl-nf'>ceil</span><span class='hljl-p'>(</span><span class='hljl-n'>TMax</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-n'>TStep</span><span class='hljl-p'>))</span><span class='hljl-t'>
+
+    </span><span class='hljl-cs'># GridSize = 50 cm</span><span class='hljl-t'>
+    </span><span class='hljl-n'>GridSize</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>Int32</span><span class='hljl-p'>(</span><span class='hljl-nf'>ceil</span><span class='hljl-p'>(</span><span class='hljl-n'>speedTrn</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-n'>TStep</span><span class='hljl-p'>))</span><span class='hljl-t'>
+    </span><span class='hljl-n'>simAGVLength</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>Int32</span><span class='hljl-p'>(</span><span class='hljl-nf'>ceil</span><span class='hljl-p'>(</span><span class='hljl-n'>AVGLength</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-n'>GridSize</span><span class='hljl-p'>))</span><span class='hljl-t'>
+    </span><span class='hljl-n'>simAGVWidth</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>Int32</span><span class='hljl-p'>(</span><span class='hljl-nf'>ceil</span><span class='hljl-p'>(</span><span class='hljl-n'>AVGWidth</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-n'>GridSize</span><span class='hljl-p'>))</span><span class='hljl-t'>
+
+    </span><span class='hljl-n'>M</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> @</span><span class='hljl-oB'>.</span><span class='hljl-t'> </span><span class='hljl-nf'>Int32</span><span class='hljl-p'>(</span><span class='hljl-nf'>ceil</span><span class='hljl-p'>(</span><span class='hljl-t'> </span><span class='hljl-p'>(</span><span class='hljl-nfB'>1.0</span><span class='hljl-oB'>/</span><span class='hljl-n'>GridSize</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-n'>F</span><span class='hljl-p'>))</span><span class='hljl-t'>
+
+    </span><span class='hljl-cs'># FINALISE RETURN FORMAT </span><span class='hljl-t'>
+    </span><span class='hljl-n'>simulation_optim</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>optimise_standardise_units</span><span class='hljl-p'>(</span><span class='hljl-t'>
+        </span><span class='hljl-n'>M</span><span class='hljl-p'>,</span><span class='hljl-t'>
+        </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>listAGVs</span><span class='hljl-p'>),</span><span class='hljl-t'>
+        </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>listTasks</span><span class='hljl-p'>),</span><span class='hljl-t'>
+        </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>speedFwd</span><span class='hljl-p'>),</span><span class='hljl-t'>
+        </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>speedBck</span><span class='hljl-p'>),</span><span class='hljl-t'>
+        </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>speedTrn</span><span class='hljl-p'>),</span><span class='hljl-t'>
+        </span><span class='hljl-nf'>scale_to_simulation</span><span class='hljl-p'>(</span><span class='hljl-n'>listParkings</span><span class='hljl-p'>))</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span>
+</pre>
+
+
+<pre class="output">
+optimise_standardise_units &#40;generic function with 1 method&#41;
+</pre>
+
+
+<h2><span class="math">$optimise\_simulation\_units()$</span> - Preparation of the Main Loop</h2>
+<h3>Preamble</h3>
+<p>Each AGV will have:</p>
+<ul>
+<li><p>a list of tasks with a list of release time.</p>
+</li>
+</ul>
+<p>&#40;BUSY WITH TASK –- RELEASE TIME&#41;&#43; –- GO TO PARKING</p>
+<p>The number of busy times can be 0. Each AGV has a final release time.</p>
+<h3>Initialisation</h3>
+<ul>
+<li><p>Using <span class="math">$M$</span>, precompute 2D graph <span class="math">$\mathbb{G}$</span>.</p>
+</li>
+</ul>
+
+
+<pre class='hljl'>
+<span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>pre_computed_2Dgraph</span><span class='hljl-p'>(</span><span class='hljl-n'>M</span><span class='hljl-oB'>::</span><span class='hljl-nf'>Matrix</span><span class='hljl-p'>{</span><span class='hljl-n'>Int32</span><span class='hljl-p'>})</span><span class='hljl-t'>
+  </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-n'>Nothing</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span>
+</pre>
+
+
+<pre class="output">
+pre_computed_2Dgraph &#40;generic function with 1 method&#41;
+</pre>
+
+
+<ul>
+<li><p>Using <span class="math">$M$</span>, precompute <span class="math">$M_0$</span> with <span class="math">$T_{Max}$</span> slices.</p>
+</li>
+<li><p>Initialise matrix <span class="math">$\tau$</span> with dimensions <span class="math">$length(ListTasks) \times length(ListTasks)$</span> Pre-calculate transfers from the end of one task to the end of another: <span class="math">$\tau_{i, j} = time\_2D(\mathbb{G}, g_i, g_j)$</span>. That matrix is NOT symmetrical.</p>
+</li>
+<li><p>For each AGV, if it already has a task, calculate its completion time <span class="math">$time\ 2D(\mathbb{G}, \alpha_i, g_j)$</span></p>
+</li>
+<li><p>Initialise the list of tasks of each AGV to just initial position <span class="math">$PlanningList = [\alpha_i=[\alpha_{i, 0}]]$</span>. Each <span class="math">$\alpha_i$</span> will grow with a list of tasks <span class="math">$\alpha_i = [\alpha_{i, 0}, \tau_{i, 1}, , \tau_{i, 2}, ...]$</span></p>
+</li>
+<li><p class="math">\[
+PlanningList = [\alpha_i]
+\]</p>
+<p>will later contain a list of AGVs <span class="math">$\alpha_i$</span> each containing their allocated tasks &#40;if any&#41;. It does not contain the list of parking locations which may vary from iteration to iteration.</p>
+</li>
+</ul>
+<h2>Start Main Loop</h2>
+
+
+<pre class='hljl'>
+<span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>optimise_standardise_units</span><span class='hljl-p'>(</span><span class='hljl-t'>
+  </span><span class='hljl-n'>F</span><span class='hljl-oB'>::</span><span class='hljl-nf'>Matrix</span><span class='hljl-p'>{</span><span class='hljl-n'>Int32</span><span class='hljl-p'>},</span><span class='hljl-t'>
+  </span><span class='hljl-n'>listAGVs</span><span class='hljl-oB'>::</span><span class='hljl-nf'>Vector</span><span class='hljl-p'>{</span><span class='hljl-n'>TAGV</span><span class='hljl-p'>},</span><span class='hljl-t'>
+  </span><span class='hljl-n'>listTasks</span><span class='hljl-oB'>::</span><span class='hljl-nf'>Vector</span><span class='hljl-p'>{</span><span class='hljl-n'>TTask</span><span class='hljl-p'>},</span><span class='hljl-t'>
+  </span><span class='hljl-n'>speedFwd</span><span class='hljl-oB'>::</span><span class='hljl-n'>Int32</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nfB'>2.0f0</span><span class='hljl-p'>,</span><span class='hljl-t'>
+  </span><span class='hljl-n'>speedBck</span><span class='hljl-oB'>::</span><span class='hljl-n'>Int32</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nfB'>1.0f0</span><span class='hljl-p'>,</span><span class='hljl-t'>
+  </span><span class='hljl-n'>speedTrn</span><span class='hljl-oB'>::</span><span class='hljl-n'>Int32</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nfB'>0.5f0</span><span class='hljl-p'>,</span><span class='hljl-t'>
+  </span><span class='hljl-n'>listParkings</span><span class='hljl-oB'>::</span><span class='hljl-nf'>Vector</span><span class='hljl-p'>{</span><span class='hljl-n'>TParking</span><span class='hljl-p'>})</span><span class='hljl-t'>
+
+  </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-n'>Nothing</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span><span class='hljl-t'>
+
+  </span><span class='hljl-cs'>#&#39;</span>
+</pre>
+
+
+<pre class="julia-error">
+ERROR: syntax: optional positional arguments must occur at end around /home/emmanuel/Documents/Work/Alba/AGV/AGV_markup.jl:2
+</pre>
+
+
+<p class="math">\[
+UnAllocatedTasks = ListTasks
+\]</p>
+<p>&#40;That is the initial list of tasks&#41;</p>
+<p><strong>REPEAT</strong> –––––––––––––––––––––––––––––––––––––––</p>
+<h3>Optimal time for the best AGV/Task pair</h3>
+<p>Planning time starts at time <span class="math">$t::Int32=0$</span>.</p>
+<h4>Assuming some tasks are not allocated yet &#40;we would not be here otherwise...&#41;</h4>
+<p class="math">\[
+ListTimePairings = []
+\]</p>
+<p>will contain the list of times: time&#40;AGV <span class="math">$\alpha_i$</span>, unallocated task <span class="math">$\tau_j$</span>&#41;</p>
+<ul>
+<li><p>For each Task <span class="math">$\tau_j$</span> in <span class="math">$UnAllocatedTasks != []$</span> &#40;if <span class="math">$UnAllocatedTasks[]$</span> is not empty&#41;:</p>
+<ul>
+<li><p>For each <span class="math">$\alpha_i$</span>:</p>
+<ul>
+<li><p>Take the time of where the AGV is: get the final position <span class="math">$current_i$</span> of <span class="math">$\alpha_i$</span>, where <span class="math">$position_i$</span> is its initial position for the first iteration &#40;if no task&#41;, or the position of its final release location <span class="math">$g_j$</span> given its list of tasks.</p>
+</li>
+<li><p>Take the time to complete the new tasks: <span class="math">$offset_i = time\_2D(\mathbb{G}, \alpha_i, g_i)$</span> when the list of tasks is empty, <span class="math">$offset_i = \tau_{i, j}$</span> for <span class="math">$i$</span> being the last task in <span class="math">$\alpha_i$</span>. </p>
+</li>
+<li><p>Calculate <span class="math">$time(\alpha_i, g_j) = current_i + offset_i$</span></p>
+</li>
+<li><p>Push the result &#40;with all relevant information&#41; into <span class="math">$ListTimePairings$</span></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4>Sort</h4>
+<p class="math">\[
+ListTimePairings
+\]</p>
+<p>contains all the current <span class="math">$\alpha_i$</span> with each of them has been allocated a single new task. <span class="math">$ListTimePairings$</span> may be <span class="math">$[]$</span>.</p>
+<ul>
+<li><p>Sort all times in <span class="math">$ListTimePairings$</span> in increasing order and find the shortest. This is the only pair AGV / Task &#40;if any&#41; that will be added to the planning..</p>
+</li>
+<li><p>Add the task to that AGV with a time which is the one stored in <span class="math">$ListTimePairings$</span>. Take the previous <span class="math">$PlanningList$</span> and replace the <span class="math">$\alpha_i$</span> which has a new task.</p>
+</li>
+<li><p>Reorder all the AGVs in decreasing order of total &#40;including updated&#41; release time. Store into  <span class="math">$PlanningList$</span>.</p>
+<ul>
+<li><p>By construction, that list will contain all the tasks which were previously allocated &#43; only one additional task.</p>
+</li>
+<li><p>The list should only contain entries where there is a new task added to already existing <span class="math">$\alpha_i$</span>. In other words, choosing an entry will always guarantee that only a single new task is added to the Planning List.</p>
+</li>
+<li><p>We now have a new list of <span class="math">$\alpha_i=[\alpha_{i, 0}, \tau_{i, 1}, , \tau_{i, 2}, ...]$</span> where AT MOST ONE of them has an additional task. This is the list to be sorted in decreasing order of total time &#40;total release time &#43; time to achieve new task&#41;. ONLY ONE if a task was available or NOTHING if the list of tasks was empty to start with.</p>
+</li>
+</ul>
+</li>
+<li><p>Remove the newly allocated task from <span class="math">$UnAllocatedTasks[]$</span>.</p>
+</li>
+</ul>
+<h3>Planning Loop</h3>
+<p class="math">\[
+ListAllocationParking = []
+\]</p>
+<p>: To store all parking allocation as it happens one by one.</p>
+<p class="math">\[
+PlanningListWithParkings
+\]</p>
+<p>: To store all the <span class="math">$\alpha_i$</span> with their respective parking before planning.</p>
+<h4>Allocate parking locations</h4>
+<p>Given the list of tasks and the parking position already allocated in <span class="math">$ListAllocationParking$</span>, create list of remaining parking positions accounting. </p>
+<p>Looping on the AGVs, allocate to each <span class="math">$\alpha_i$</span> the closest parking <span class="math">$Parking_i$</span> from its last <span class="math">$\tau_{i, j}$</span> in its list of tasks. Push each into <span class="math">$PlanningListWithParkings$</span>.</p>
+<p>Sort <span class="math">$PlanningListWithParkings$</span> in decreasing time order.</p>
+<h4>Start planning loop</h4>
+<p class="math">\[
+ListFullPath = []
+\]</p>
+<p>: To store all paths one by one.</p>
+<p><strong>FOR</strong> ––––––</p>
+<p>For each <span class="math">$\alpha_i \in PlanningList$</span>:</p>
+<ul>
+<li><p class="math">\[
+M_i = M_{i-1}
+\]</p>
+<p>&#40;Note that <span class="math">$M_0$</span> is precalculated&#41;</p>
+</li>
+<li><p>Add slices to <span class="math">$M_i$</span> so that at least <span class="math">$T_{Max}$</span> slices of buffer.</p>
+</li>
+</ul>
+<p><strong>Create detailed plan for <span class="math">$Path_i$</span></strong></p>
+<ul>
+<li><p>Reset the clock of the AGV: <span class="math">$t_i = 0$</span></p>
+</li>
+<li><p>Plan <span class="math">$PlanningListWithParkings[i]$</span> on <span class="math">$M_i$</span>. The planning must record the times of the final realease time at which all tasks for that <span class="math">$\alpha_i$</span> are completed &#91;CHECK: Is the time of parking to be recorded as well&#93;. The result is <span class="math">$FullPath$</span>. If not solution, raise error to increase <span class="math">$T_{Max}$</span>.</p>
+</li>
+<li><p>Push <span class="math">$FullPath$</span> into <span class="math">$ListFullPath$</span></p>
+</li>
+<li><p>Push found path <span class="math">$FullPath$</span> into <span class="math">$M_i$</span> &#40;i.e. obstruct that path&#41;. </p>
+</li>
+<li><p><strong>NEXT</strong></p>
+</li>
+</ul>
+<p>__UNTIL __ All tasks have been planned</p>
+<p class="math">\[
+optimise\_simulation\_units
+\]</p>
+<p>: Return list of <span class="math">$\alpha_i=[\alpha_{i, 0}, \tau_{i, 1}, , \tau_{i, 2}, ...]$</span>, and <span class="math">$ListFullPath$</span></p>
+
+
+<pre class='hljl'>
+
+</pre>
+
+
+
+
+        <HR/>
+        <div class="footer">
+          <p>
+            Published from <a href="AGV_markup.jl">AGV_markup.jl</a>
+            using <a href="http://github.com/JunoLab/Weave.jl">Weave.jl</a> v0.10.7 on 2021-04-02.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BODY>
+
+</HTML>

@@ -1,0 +1,1497 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass jss
+\begin_preamble
+%the following commands are used only for book or software reviews
+
+%\Reviewer{Some Author\\University of Somewhere}
+%\Plainreviewer{Some Author}
+
+%the following commands are used for articles, codesnippets, book reviews and software reviews
+
+%publication information
+%do not use these commands before the article has been accepted
+%\Volume{00}
+%\Issue{0}
+%\Month{Month}
+%\Year{2000}
+%\Submitdate{2000-00-00}
+%\Acceptdate{2000-00-00}
+
+%if you use Sweave,  include the following line (with % symbols):
+%% need no \usepackage{Sweave.sty}
+
+\LinesNumbered
+\end_preamble
+\options article
+\use_default_options false
+\begin_modules
+algorithm2e
+eqs-within-sections
+figs-within-sections
+tabs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language british
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf4
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style british
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This is a template \SpecialChar LyX
+ file for articles to be submitted to the Journal of
+ Statistical Software (JSS).
+ How to install the JSS \SpecialChar LaTeX
+ class to your \SpecialChar LaTeX
+ system is explained in
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.lyx.org/Layouts/JSS
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+To use the JSS codesnippet, bookreview or softwarereview styles, replace
+ the option
+\begin_inset Quotes eld
+\end_inset
+
+article
+\begin_inset Quotes erd
+\end_inset
+
+ in Document\SpecialChar menuseparator
+Settings\SpecialChar menuseparator
+Document Class\SpecialChar menuseparator
+Options with
+\begin_inset Quotes eld
+\end_inset
+
+codesnippet
+\begin_inset Quotes erd
+\end_inset
+
+,
+\begin_inset Quotes eld
+\end_inset
+
+bookreview
+\begin_inset Quotes erd
+\end_inset
+
+ or
+\begin_inset Quotes eld
+\end_inset
+
+softwarereview
+\begin_inset Quotes erd
+\end_inset
+
+ and remove/uncomment the relevant parts in the \SpecialChar LaTeX
+ Preamble.
+
+\end_layout
+
+\begin_layout Plain Layout
+If you want to use this JSS article style for a non-JSS article, replace
+ the option
+\begin_inset Quotes eld
+\end_inset
+
+article
+\begin_inset Quotes erd
+\end_inset
+
+ with
+\begin_inset Quotes eld
+\end_inset
+
+nojss
+\begin_inset Quotes erd
+\end_inset
+
+.
+ This will suppress the JSS-specific parts of the layout.
+\end_layout
+
+\begin_layout Plain Layout
+To include the JSS-specific parts of the layout, the article has to be processed
+ with PDF, i.
+\begin_inset space \thinspace{}
+\end_inset
+
+e.
+\begin_inset space ~
+\end_inset
+
+you cannot process it with DVI or PS.
+ However, if the option
+\begin_inset Quotes eld
+\end_inset
+
+nojss
+\begin_inset Quotes erd
+\end_inset
+
+ is used, it can be processed with DVI or PS.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+AGV: Multi-AGV flow optimisation
+\begin_inset Flex Pkg
+status open
+
+\begin_layout Plain Layout
+foo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Title
+A Capitalized Title: Something about a Package foo
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Emmanuel RIALLAND
+\begin_inset Newline newline
+\end_inset
+
+ALBA INTELLIGENCE - HONG KONG
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Author
+Emmanuel RIALLAND
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Short Title
+\begin_inset Flex Pkg
+status open
+
+\begin_layout Plain Layout
+Multi-AGV optimisation
+\end_layout
+
+\end_inset
+
+: Short Title
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+only if necessary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+\noindent
+TO BE DONE
+\end_layout
+
+\begin_layout Keywords
+keywords, comma-separated, not capitalized,
+\begin_inset Flex Proglang
+status open
+
+\begin_layout Plain Layout
+Java
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+at least one keyword must be supplied
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Keywords
+keyword 1, keyword 2, foo, R
+\end_layout
+
+\begin_layout Address
+Emmanuel RIALLAND
+\begin_inset Newline newline
+\end_inset
+
+ALBA INTELLIGENCE
+\begin_inset Newline newline
+\end_inset
+
+HONG KONG
+\begin_inset Newline newline
+\end_inset
+
+E-mail:
+\begin_inset Flex E-mail
+status open
+
+\begin_layout Plain Layout
+
+Emmanuel.Rialland@gmail.com
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+URL:
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+TBC
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+It is also possible to add a telephone and fax number before the e-mail
+ in the following format:
+\begin_inset Newline newline
+\end_inset
+
+Telephone: +43/512/507-7103
+\end_layout
+
+\begin_layout Plain Layout
+Fax: +43/512/507-2851
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList algorithm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Section
+Data Structures
+\end_layout
+
+\begin_layout LyX-Code
+List of parkings:
+\end_layout
+
+\begin_layout Standard
+- Parking ID - Parking location: $x$, $y$
+\end_layout
+
+\begin_layout Standard
+List of Tasks: Know at algo start
+\end_layout
+
+\begin_layout Standard
+- Task ID - Location start ($s_j$): $x$, $y$, $onrack$, $h$.
+ $h$ only in on racks ($onrack == true$) - Location target ($g_j$): $x$,
+ $y$, $onrack$, $h$.
+ $h$ only in on racks ($onrack == true$)
+\end_layout
+
+\begin_layout Standard
+List of AGV:
+\end_layout
+
+\begin_layout Standard
+- ID number: Known at algo start - Initial position: Known at algo start
+ - Current position: $x$, $y$.
+ - State (TBD) - List of tasks: Initialised empty
+\end_layout
+
+\begin_layout Standard
+- Task ID - time from previous step to reach task.
+ The list is updated at each iteration using the release time calculated
+ by A*.
+ For the first task, this is the tome from the AGV starting position.
+\end_layout
+
+\begin_layout Standard
+- Allocated parking.
+ Not used unless during search.
+\end_layout
+
+\begin_layout Section
+Algorithms
+\end_layout
+
+\begin_layout Subsection*
+Main Algorithm
+\end_layout
+
+\begin_layout Standard
+# Algorithm
+\end_layout
+
+\begin_layout Standard
+## Expected inputs
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+SetAlgoLined
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+DontPrintSemicolon
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Main Loop}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+KwIn{
+\end_layout
+
+\begin_layout Plain Layout
+
+	$F$: Compulsory.
+ Matrix of the Floor Plan.
+ $F$ is defined with a standardised scale.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	ListOfParkings: Optional.
+ List of all parking locations
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Begin{
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+If{
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{
+\end_layout
+
+\begin_layout Plain Layout
+
+			ListOfParkings is optional.
+ If not supplied, needs to be created
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+		ListOfParkings
+\backslash
+eq Empty
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+	}{
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{
+\end_layout
+
+\begin_layout Plain Layout
+
+			Create parking positions with:
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin[Itemize]{
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item{number of parkings located next to sources of tasks in proportion of
+ coming orders.}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item{Assume that this being done, equal probability of use is acceptable
+ (no priority in the order of filling the parking).}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item{all different}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item{at least one per AGV}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item{WARNING: this is necessary to guarantee that searches will always find
+ solution: ensure parking positions do not prevent any traffic once an AGV
+ is occupying it.}
+\end_layout
+
+\begin_layout Plain Layout
+
+			}
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	initialization
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+While{not at end of this document}{
+\end_layout
+
+\begin_layout Plain Layout
+
+		read current
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+eIf{understand}{
+\end_layout
+
+\begin_layout Plain Layout
+
+			go to next section
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+			current section becomes this one
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+		}{
+\end_layout
+
+\begin_layout Plain Layout
+
+			go back to the beginning of current section
+\backslash
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+KwOut{Perfect Result}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+- Floor plan matrix $F$ with standardised scale
+\end_layout
+
+\begin_layout Standard
+- _IF_ NO parking position is given _THEN_
+\end_layout
+
+\begin_layout Standard
+-
+\end_layout
+
+\begin_layout Standard
+- Speeds: forward, backward, turn
+\end_layout
+
+\begin_layout Standard
+- Max simulation time $T_{Max}$: This time will be used when planning a
+ path.
+ It has to be long enough so that, given any configuration, A* will find
+ a path from any current position, to achieve any task and go to any parking
+ position.
+ Currently 5 minutes.
+ Track A* failures to check if long enough.
+\end_layout
+
+\begin_layout Standard
+## Create scaled floor plan matrix
+\end_layout
+
+\begin_layout Standard
+Receive $F$ matrix of the full floor plan.
+\end_layout
+
+\begin_layout Standard
+Estimate adequate time step $t_{step}$ to scaled matrix to $M$.
+\end_layout
+
+\begin_layout Standard
+${Step}_{Max} =
+\backslash
+frac{T_{Max}}{t_{step}}$ is the depth of the 3D planning matrix.
+\end_layout
+
+\begin_layout Standard
+From here on, all positions $Parking_i$, $
+\backslash
+alpha_i$, $s_j$, $g_j$ are appropriately scaled given $t_{step}$.
+\end_layout
+
+\begin_layout Standard
+# Functions
+\end_layout
+
+\begin_layout Standard
+## Timing
+\end_layout
+
+\begin_layout Standard
+### $time(a, b)$ Time the optimal paths from location $a$ to $b$ using A*
+ [TODO: Consider variants].
+\end_layout
+
+\begin_layout Standard
+Returns full path and total execution time
+\end_layout
+
+\begin_layout Standard
+## Main Loop
+\end_layout
+
+\begin_layout Standard
+## Preamble
+\end_layout
+
+\begin_layout Standard
+Each AGV will have:
+\end_layout
+
+\begin_layout Standard
+- a list of tasks with a list of release time.
+\end_layout
+
+\begin_layout Standard
+-------- BUSY WITH TASK --- RELEASE -------- BUSY WITH TASK --- RELEASE
+ ------ GO TO PARKING
+\end_layout
+
+\begin_layout Standard
+The number of busy times can be 0.
+ Each AGV has a final release time.
+\end_layout
+
+\begin_layout Standard
+## Initialisation
+\end_layout
+
+\begin_layout Standard
+Pre-calculate: Calculate for each task $
+\backslash
+tau_j = time(s_j, g_j)$
+\end_layout
+
+\begin_layout Standard
+Initialise the list of tasks of each AGV to just initial position $
+\backslash
+alpha_i=[
+\backslash
+alpha_{i, 0}]$.
+ This will grow with a list of tasks $
+\backslash
+alpha_i=[
+\backslash
+alpha_{i, 0},
+\backslash
+tau_{i, 1}, ,
+\backslash
+tau_{i, 2}, ...]$
+\end_layout
+
+\begin_layout Standard
+### START OPTIM: List of AGV/task couples
+\end_layout
+
+\begin_layout Standard
+Planning time starts at time $t=0$.
+\end_layout
+
+\begin_layout Standard
+$PlanningList = []$ will contain a list of AGVs $
+\backslash
+alpha_i$ each containing their allocated tasks (if any).
+\end_layout
+
+\begin_layout Standard
+#### Look at all the total AGV/Tasks times.
+\end_layout
+
+\begin_layout Standard
+##### Free tasks
+\end_layout
+
+\begin_layout Standard
+Create a list $UnAllocatedTasks = []$
+\end_layout
+
+\begin_layout Standard
+Look for all unallocated tasks: Each BUSY TIME is a Task which has already
+ been allocated.
+ Store in $UnAllocatedTasks$.
+\end_layout
+
+\begin_layout Standard
+##### Assuming some tasks are not allocated yet (we would not be here otherwise...)
+\end_layout
+
+\begin_layout Standard
+_IF_ $UnAllocatedTasks != []$
+\end_layout
+
+\begin_layout Standard
+- For each Task $
+\backslash
+tau_j$ in $UnAllocatedTasks != []$:
+\end_layout
+
+\begin_layout Standard
+- For each $
+\backslash
+alpha_i$: - Calculate time($
+\backslash
+alpha_i$, $g_j$) time($
+\backslash
+alpha_i$, $g_j$) = time($
+\backslash
+alpha_i$, $s_j$) + time($s_i$, $g_j$) + OFFSET - with $
+\backslash
+alpha_i$ being either: (1) its initial position for the first iteration,
+ or (2) the position of its final release location: time $g_j$ of the last
+ task in $
+\backslash
+alpha_i$'s list.
+ - and OFFSET being: (1) 0 when the list of tasks is empty, or (2) the time
+ at final release time (being very first time($
+\backslash
+alpha_i$, $s_j$) PLUS $
+\backslash
+Sigma$ all times in the list of tasks of $
+\backslash
+alpha_i$.
+
+\end_layout
+
+\begin_layout Standard
+- Push result into $L$
+\end_layout
+
+\begin_layout Standard
+#### Sort
+\end_layout
+
+\begin_layout Standard
+- Sort all times in increasing order: $L = [t_{i, j}, (
+\backslash
+alpha_i,
+\backslash
+tau_j)]$
+\end_layout
+
+\begin_layout Standard
+- Find the best times to do all tasks: Loop elements from $L$, push from
+ shortest into $PlanningList$ so that each task has appeared ONLY once.
+ Each AGV may have several tasks!
+\end_layout
+
+\begin_layout Standard
+##### Finalise planning list
+\end_layout
+
+\begin_layout Standard
+- The list should only contain entries where there is a new task added to
+ already existing $
+\backslash
+alpha_i$.
+ In other words, choosing an entry will always guarantee that a new task
+ is added to the Planning List.
+ - Sort $PlanningList$ in decreasing order of time so that the longest is
+ allocated 1st.
+ Pick the longest to add to the $PlanningList$.
+ - Add to $PlanningList$ all the $
+\backslash
+alpha_i$ which have not been picked.
+ - We now have a new list of $
+\backslash
+alpha_i=[
+\backslash
+alpha_{i, 0},
+\backslash
+tau_{i, 1}, ,
+\backslash
+tau_{i, 2}, ...]$ where AT MOST ONE of them has an additional task.
+ This is the list to be sorted in decreasing order of total time (total
+ release time + time to achieve new task).
+ ONLY ONE if a task was available or NOTHING if the list of tasks was empty
+ to start with.
+\end_layout
+
+\begin_layout Standard
+#### Planning Loop
+\end_layout
+
+\begin_layout Standard
+To store all parking allocation one by one: $ListAllocationParking = []$
+ To store all paths one by one: $ListFullPath = []$
+\end_layout
+
+\begin_layout Standard
+Initial matrix to solve paths in 3D; $M_0 = M$
+\end_layout
+
+\begin_layout Standard
+For each $
+\backslash
+alpha_i
+\backslash
+in PlanningList$:
+\end_layout
+
+\begin_layout Standard
+- $M_i = M_{i-1}$ - Add 5 minutes of slices to $M_i$
+\end_layout
+
+\begin_layout Standard
+#### Parking position
+\end_layout
+
+\begin_layout Standard
+Given the list of tasks and the parking position already allocated in $ListAlloc
+ationParking$, create list of remaining parking positions accounting.
+ Allocate to current $
+\backslash
+alpha_i$ the closest parking from its last $
+\backslash
+tau_{i, j}$ in its list of tasks.
+\end_layout
+
+\begin_layout Standard
+This is $Parking_i$.
+\end_layout
+
+\begin_layout Standard
+##### Create detailed plan for $Path_i$
+\end_layout
+
+\begin_layout Standard
+- Create full path to plan for including $i^{th}$ parking slot ${PathToPlan}_i
+ = [
+\backslash
+alpha_i, Parking_i]$ where $
+\backslash
+alpha_i$ is the element $i$ of $PlanningList$.
+ - Plan ${PathToPlan}_i$ on $M_i$.
+ The planning must record the times of the final realease time at which
+ all tasks for that $
+\backslash
+alpha_i$ are completed [CHECK: Is the time of parking to be recorded as
+ well].
+ The result is ${FullPath}_i$.
+ - Push ${FullPath}_i$ into $ListFullPath$
+\end_layout
+
+\begin_layout Standard
+- Push found path into $M_i$ (i.e.
+ obstruct that path).
+ Shorten $M_i$ to time to reach $Parking_i$.
+\end_layout
+
+\begin_layout Standard
+- Next step in Planning Loop
+\end_layout
+
+\begin_layout Standard
+#### Check loop
+\end_layout
+
+\begin_layout Standard
+If there are tasks remaining to be planned, loop back to START OPTIM
+\end_layout
+
+\begin_layout Standard
+### Return
+\end_layout
+
+\begin_layout Standard
+Return list of $
+\backslash
+alpha_i=[
+\backslash
+alpha_{i, 0},
+\backslash
+tau_{i, 1}, ,
+\backslash
+tau_{i, 2}, ...]$, and $ListFullPath$
+\end_layout
+
+\begin_layout Section
+About package
+\begin_inset Flex Pkg
+status open
+
+\begin_layout Plain Layout
+foo
+\end_layout
+
+\end_inset
+
+ in
+\begin_inset Flex Proglang
+status open
+
+\begin_layout Plain Layout
+R
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+About package foo in R
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The short title provides bookmarks for PDF files
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Main Loop
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The special JSS style commands related to software and mathematical formulas
+ are written as follows in \SpecialChar LyX
+:
+\begin_inset Flex Proglang
+status open
+
+\begin_layout Plain Layout
+R
+\end_layout
+
+\end_inset
+
+ or
+\begin_inset Flex Proglang
+status open
+
+\begin_layout Plain Layout
+R
+\end_layout
+
+\end_inset
+
+ for the names of programming languages,
+\begin_inset Flex Pkg
+status open
+
+\begin_layout Plain Layout
+foo
+\end_layout
+
+\end_inset
+
+ or
+\begin_inset Flex Pkg
+status open
+
+\begin_layout Plain Layout
+foo
+\end_layout
+
+\end_inset
+
+ for software packages, and
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+some code
+\end_layout
+
+\end_inset
+
+ or
+\begin_inset Flex Pkg
+status open
+
+\begin_layout Plain Layout
+some code
+\end_layout
+
+\end_inset
+
+ for code;
+\begin_inset Formula $\E$
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+written as
+\backslash
+E
+\end_layout
+
+\end_inset
+
+ for expectations,
+\begin_inset Formula $\VAR$
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+written as
+\backslash
+VAR
+\end_layout
+
+\end_inset
+
+ for variances,
+\begin_inset Formula $\COV$
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+written as
+\backslash
+COV
+\end_layout
+
+\end_inset
+
+ for covariances, and
+\begin_inset Formula $\Prob$
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+written as
+\backslash
+Prob
+\end_layout
+
+\end_inset
+
+ for probabilities.
+\end_layout
+
+\begin_layout Standard
+Writing several lines of code:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code Chunk
+status open
+
+\begin_layout Code
+
+first line of code
+\end_layout
+
+\begin_layout Code
+
+second line of code
+\end_layout
+
+\begin_layout Code
+
+third line of code
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Alternatively, you can distinguish between input and output code:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code Chunk
+status open
+
+\begin_layout Code Input
+
+first line of input code
+\end_layout
+
+\begin_layout Code Input
+
+second line of input code
+\end_layout
+
+\begin_layout Code Output
+
+first line of output code
+\end_layout
+
+\begin_layout Code Output
+
+second line of output code
+\end_layout
+
+\begin_layout Code Output
+
+third line of output code
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Acknowledgments
+\end_layout
+
+\begin_layout Standard
+Here you can write some acknowledgments.
+\end_layout
+
+\begin_layout Section
+\start_of_appendix
+This is the first appendix section
+\end_layout
+
+\begin_layout Subsection
+A subsection
+\end_layout
+
+\begin_layout Subsubsection
+A subsubsection
+\end_layout
+
+\begin_layout Standard
+some text
+\end_layout
+
+\end_body
+\end_document

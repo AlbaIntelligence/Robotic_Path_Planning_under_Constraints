@@ -1,0 +1,1116 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[a4paper,text={16.5cm,25.2cm},centering]{geometry}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.2ex}
+
+\hypersetup
+       {   pdfauthor = {  },
+           pdftitle={  },
+           colorlinks=TRUE,
+           linkcolor=black,
+           citecolor=blue,
+           urlcolor=blue
+       }
+
+
+
+
+\usepackage{upquote}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    upquote=true,
+    breaklines=true,
+    breakindent=0pt,
+    keepspaces=true,
+    showspaces=false,
+    columns=fullflexible,
+    showtabs=false,
+    showstringspaces=false,
+    escapeinside={(*@}{@*)},
+    extendedchars=true,
+}
+\newcommand{\HLJLt}[1]{#1}
+\newcommand{\HLJLw}[1]{#1}
+\newcommand{\HLJLe}[1]{#1}
+\newcommand{\HLJLeB}[1]{#1}
+\newcommand{\HLJLo}[1]{#1}
+\newcommand{\HLJLk}[1]{\textcolor[RGB]{148,91,176}{\textbf{#1}}}
+\newcommand{\HLJLkc}[1]{\textcolor[RGB]{59,151,46}{\textit{#1}}}
+\newcommand{\HLJLkd}[1]{\textcolor[RGB]{214,102,97}{\textit{#1}}}
+\newcommand{\HLJLkn}[1]{\textcolor[RGB]{148,91,176}{\textbf{#1}}}
+\newcommand{\HLJLkp}[1]{\textcolor[RGB]{148,91,176}{\textbf{#1}}}
+\newcommand{\HLJLkr}[1]{\textcolor[RGB]{148,91,176}{\textbf{#1}}}
+\newcommand{\HLJLkt}[1]{\textcolor[RGB]{148,91,176}{\textbf{#1}}}
+\newcommand{\HLJLn}[1]{#1}
+\newcommand{\HLJLna}[1]{#1}
+\newcommand{\HLJLnb}[1]{#1}
+\newcommand{\HLJLnbp}[1]{#1}
+\newcommand{\HLJLnc}[1]{#1}
+\newcommand{\HLJLncB}[1]{#1}
+\newcommand{\HLJLnd}[1]{\textcolor[RGB]{214,102,97}{#1}}
+\newcommand{\HLJLne}[1]{#1}
+\newcommand{\HLJLneB}[1]{#1}
+\newcommand{\HLJLnf}[1]{\textcolor[RGB]{66,102,213}{#1}}
+\newcommand{\HLJLnfm}[1]{\textcolor[RGB]{66,102,213}{#1}}
+\newcommand{\HLJLnp}[1]{#1}
+\newcommand{\HLJLnl}[1]{#1}
+\newcommand{\HLJLnn}[1]{#1}
+\newcommand{\HLJLno}[1]{#1}
+\newcommand{\HLJLnt}[1]{#1}
+\newcommand{\HLJLnv}[1]{#1}
+\newcommand{\HLJLnvc}[1]{#1}
+\newcommand{\HLJLnvg}[1]{#1}
+\newcommand{\HLJLnvi}[1]{#1}
+\newcommand{\HLJLnvm}[1]{#1}
+\newcommand{\HLJLl}[1]{#1}
+\newcommand{\HLJLld}[1]{\textcolor[RGB]{148,91,176}{\textit{#1}}}
+\newcommand{\HLJLs}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLsa}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLsb}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLsc}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLsd}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLsdB}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLsdC}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLse}[1]{\textcolor[RGB]{59,151,46}{#1}}
+\newcommand{\HLJLsh}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLsi}[1]{#1}
+\newcommand{\HLJLso}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLsr}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLss}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLssB}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLnB}[1]{\textcolor[RGB]{59,151,46}{#1}}
+\newcommand{\HLJLnbB}[1]{\textcolor[RGB]{59,151,46}{#1}}
+\newcommand{\HLJLnfB}[1]{\textcolor[RGB]{59,151,46}{#1}}
+\newcommand{\HLJLnh}[1]{\textcolor[RGB]{59,151,46}{#1}}
+\newcommand{\HLJLni}[1]{\textcolor[RGB]{59,151,46}{#1}}
+\newcommand{\HLJLnil}[1]{\textcolor[RGB]{59,151,46}{#1}}
+\newcommand{\HLJLnoB}[1]{\textcolor[RGB]{59,151,46}{#1}}
+\newcommand{\HLJLoB}[1]{\textcolor[RGB]{102,102,102}{\textbf{#1}}}
+\newcommand{\HLJLow}[1]{\textcolor[RGB]{102,102,102}{\textbf{#1}}}
+\newcommand{\HLJLp}[1]{#1}
+\newcommand{\HLJLc}[1]{\textcolor[RGB]{153,153,119}{\textit{#1}}}
+\newcommand{\HLJLch}[1]{\textcolor[RGB]{153,153,119}{\textit{#1}}}
+\newcommand{\HLJLcm}[1]{\textcolor[RGB]{153,153,119}{\textit{#1}}}
+\newcommand{\HLJLcp}[1]{\textcolor[RGB]{153,153,119}{\textit{#1}}}
+\newcommand{\HLJLcpB}[1]{\textcolor[RGB]{153,153,119}{\textit{#1}}}
+\newcommand{\HLJLcs}[1]{\textcolor[RGB]{153,153,119}{\textit{#1}}}
+\newcommand{\HLJLcsB}[1]{\textcolor[RGB]{153,153,119}{\textit{#1}}}
+\newcommand{\HLJLg}[1]{#1}
+\newcommand{\HLJLgd}[1]{#1}
+\newcommand{\HLJLge}[1]{#1}
+\newcommand{\HLJLgeB}[1]{#1}
+\newcommand{\HLJLgh}[1]{#1}
+\newcommand{\HLJLgi}[1]{#1}
+\newcommand{\HLJLgo}[1]{#1}
+\newcommand{\HLJLgp}[1]{#1}
+\newcommand{\HLJLgs}[1]{#1}
+\newcommand{\HLJLgsB}[1]{#1}
+\newcommand{\HLJLgt}[1]{#1}
+
+
+\begin{document}
+
+
+
+\rule{\textwidth}{1pt}
+title: "Algorithm of Multi-AGVs Flow Optimisation" author: "Emmanuel RIALLAND - ALBA INTELLIGENCE HONG KONG" date: 2021-04-03 weave\emph{options:     pandoc}options: numbersections     pandoc\_options: number-sections     wrap: true \ensuremath{\endash}-
+
+
+\begin{lstlisting}
+(*@\HLJLk{using}@*) (*@\HLJLn{Weave}@*)
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Weave.weave("{}AGV{\_}markup.jl"{};}@*) (*@\HLJLcs{doctype="{}pandoc2pdf"{},}@*) (*@\HLJLcs{cache=:refresh,}@*) (*@\HLJLcs{pandoc{\_}options=["{}--table-of-contents"{},}@*) (*@\HLJLcs{"{}--number-sections"{},}@*) (*@\HLJLcs{"{}--reference-links"{}])}@*)
+
+(*@\HLJLk{using}@*) (*@\HLJLn{LightGraphs}@*)(*@\HLJLp{,}@*) (*@\HLJLn{SimpleWeightedGraphs}@*)
+\end{lstlisting}
+
+
+\section{[TODO]}
+\begin{itemize}
+\item [TODO: Consider variants to A*]
+
+\end{itemize}
+\section{NOTES}
+\begin{itemize}
+\item Single planning (next task allocation): matrix 2D because only sorting by distance (cost = time) without considering collisions.
+
+
+\item Multiple planning: 3D
+
+
+\item \[
+T_{Max}
+\]
+is currently fixed at 300s. It could just be a minimum to be dynamically increased if A* search is unsuccessful.
+
+\end{itemize}
+
+\begin{lstlisting}
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{HARDCODED}@*) (*@\HLJLcs{IN}@*) (*@\HLJLcs{SECONDS.}@*) (*@\HLJLcs{ALL}@*) (*@\HLJLcs{SPEEDS}@*) (*@\HLJLcs{ARE}@*) (*@\HLJLcs{MULTIPLES.}@*)
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{THIS}@*) (*@\HLJLcs{WAY:}@*) (*@\HLJLcs{TURN}@*) (*@\HLJLcs{=}@*) (*@\HLJLcs{1}@*) (*@\HLJLcs{UNIT.}@*) (*@\HLJLcs{BCK}@*) (*@\HLJLcs{=}@*) (*@\HLJLcs{2}@*) (*@\HLJLcs{UNITS.}@*) (*@\HLJLcs{FWD}@*) (*@\HLJLcs{=}@*) (*@\HLJLcs{4}@*) (*@\HLJLcs{UNITS.}@*)
+
+(*@\HLJLn{Tmax}@*) (*@\HLJLoB{=}@*) (*@\HLJLni{5}@*) (*@\HLJLoB{*}@*) (*@\HLJLni{60}@*)
+(*@\HLJLn{TStep}@*) (*@\HLJLoB{=}@*) (*@\HLJLnfB{0.50f0}@*)
+(*@\HLJLn{SliceMax}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{Int32}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{ceil}@*)(*@\HLJLp{(}@*)(*@\HLJLn{Tmax}@*) (*@\HLJLoB{/}@*) (*@\HLJLn{TStep}@*)(*@\HLJLp{))}@*)
+
+(*@\HLJLn{AGVLength}@*) (*@\HLJLoB{=}@*) (*@\HLJLnfB{4.0f0}@*)
+(*@\HLJLn{AGVWidth}@*) (*@\HLJLoB{=}@*) (*@\HLJLnfB{3.0f0}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+3.0f0
+\end{lstlisting}
+
+
+\section{Assumptions}
+\begin{itemize}
+\item Everything in SI.
+
+
+\item Time-step short enough to never have jump-overs even at full speed.
+
+
+\item AGV dimensions approximated in multiple of twice the grid so that all dimensions / tests can be done as centre location +/- value in integers.
+
+
+\item AGV dimensions include palettes.
+
+
+\item Should include security perimeter monitored by AGV?
+
+
+\item All standardised dimensions in floating point. All simulation dimensions in integers. Type mistakes are easier to pick up.
+
+
+\item Dimensions of the floor plan is in units of the gridsize.
+
+
+\item Location of palettes is actually given as the location in the alleys. Easier to calculate paths.
+
+\end{itemize}
+\section{Data structures}
+\subsection{Data types}
+\subsubsection{Location / Time}
+\[
+TLocation
+\]
+:
+
+\begin{itemize}
+\item \[
+x, y:: Float32
+\]
+for standardised units
+
+
+\item \[
+simx, simx::Int32
+\]
+for simulation units (more than enough >= 2,000 km at 1 mm resolution)
+
+\end{itemize}
+
+\begin{lstlisting}
+(*@\HLJLk{struct}@*) (*@\HLJLn{TLocation}@*)
+    (*@\HLJLn{x}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)
+    (*@\HLJLn{y}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)
+    (*@\HLJLn{simx}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)
+    (*@\HLJLn{simy}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+
+\[
+TTime
+\]
+:
+
+\begin{itemize}
+\item \[
+t:: Float32
+\]
+for standardised units
+
+
+\item \[
+simt::Int32
+\]
+for simulation units (more than enough >= 24 days at 1ms resolution)
+
+\end{itemize}
+
+\begin{lstlisting}
+(*@\HLJLk{struct}@*) (*@\HLJLn{TTime}@*)
+    (*@\HLJLn{t}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)
+    (*@\HLJLn{simt}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+
+\subsubsection{Direction of an AGV}
+\[
+TDirection
+\]
+::
+
+\begin{itemize}
+\item Enum: [Up, Down, Left, Right]
+
+\end{itemize}
+
+\begin{lstlisting}
+(*@\HLJLnd{@enum}@*) (*@\HLJLn{TDirection}@*) (*@\HLJLk{begin}@*)
+    (*@\HLJLn{Up}@*)
+    (*@\HLJLn{Down}@*)
+    (*@\HLJLn{Left}@*)
+    (*@\HLJLn{Right}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+
+\subsection{Structures}
+\subsubsection{Parkings:}
+\begin{itemize}
+\item Parking ID
+
+
+\item Parking location: $TLocation$
+
+\end{itemize}
+
+\begin{lstlisting}
+(*@\HLJLk{struct}@*) (*@\HLJLn{TParking}@*)
+    (*@\HLJLn{ID}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{String}@*)
+    (*@\HLJLn{loc}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TLocation}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+
+\subsubsection{Tasks: Know at algo start}
+\begin{itemize}
+\item Task ID
+
+\end{itemize}
+[TODO: Transform to data type]
+
+\begin{itemize}
+\item Location start ($s_j$): $TLocation$, $onrack$, $level$. $level$ only in on racks ($onrack == true$)
+
+
+\item Location target ($g_j$): $TLocation$, $onrack$, $level$. $level$ only in on racks ($onrack == true$)
+
+\end{itemize}
+
+\begin{lstlisting}
+(*@\HLJLk{struct}@*) (*@\HLJLn{TPalette}@*)
+    (*@\HLJLn{loc}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TLocation}@*)
+    (*@\HLJLn{onRack}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Bool}@*)
+    (*@\HLJLn{level}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int16}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+
+\begin{itemize}
+\item ALERT: TASK IS NOT NECESSARILY WITH PALETTES.
+
+\begin{itemize}
+\item NEED TO CONSIDER PICKUP FROM CONVEYOR, TOP, BOTTOM, QUAY
+
+
+\item NEED TO CONSIDER EXACT POSITION AT THE END OF TASK (FACING SHELF, FACING ELSEWHERE?)
+
+
+\item NEED TO SEPARATE TIMES RELATED TO THE TASK PROVIDED BY THE QUEUING SYSTEM, VS. TIME CALCULATED FOR A GIVEN AGV MODEL.
+
+\end{itemize}
+\end{itemize}
+
+\begin{lstlisting}
+(*@\HLJLk{struct}@*) (*@\HLJLn{TTask}@*)
+    (*@\HLJLn{ID}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{String}@*)
+    (*@\HLJLn{start}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TPalette}@*)
+    (*@\HLJLn{target}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TPalette}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+
+\subsubsection{AGV:}
+\begin{itemize}
+\item ID number: Known at algo start
+
+
+\item Initial position: $TLocation$ Known at algo start
+
+
+\item Current position: $TLocation$.
+
+
+\item Final position: $TLocation$.
+
+
+\item Final time stamp: $TTime$
+
+
+\item State:
+
+\begin{itemize}
+\item \[
+Direction
+\]
+: $TDirection$
+
+
+\item \[
+isLoaded
+\]
+: $Bool$
+
+
+\item \[
+isSideways
+\]
+:: $Bool$ - is the AGV facing a shelf but otherwise ready to go (about to load or after loading, but no idea where to go).
+
+
+\item [TODO: More TBD]
+
+\end{itemize}
+
+\item List of tasks as list of tuples allocated to that AGV: Initialised empty
+
+\begin{itemize}
+\item Task ID
+
+
+\item time $TTime$ in simulation units from previous step to reach task. The list is updated at each iteration using the release time calculated by A*. $t = 0$ at the start.
+
+\end{itemize}
+
+\item Allocated parking . Full structure for the moment. (Maybe $Parking_{ID}$ later?).
+
+\end{itemize}
+
+\begin{lstlisting}
+(*@\HLJLk{struct}@*) (*@\HLJLn{TAGV}@*)
+    (*@\HLJLn{ID}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{String}@*)
+    (*@\HLJLn{start}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TLocation}@*)
+    (*@\HLJLn{current}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TLocation}@*)
+    (*@\HLJLn{target}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TLocation}@*)
+
+    (*@\HLJLn{time}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TTime}@*)
+
+    (*@\HLJLn{direction}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TDirection}@*)
+    (*@\HLJLn{isLoaded}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Bool}@*)
+    (*@\HLJLn{isSideways}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Bool}@*)
+
+    (*@\HLJLn{listTasks}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{Vector}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{TTask}@*)(*@\HLJLp{{\}}}@*)
+    (*@\HLJLn{park}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TParking}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+
+\section{Utility Functions}
+\subsection{Reciprocal conversions between simulation coordinates and node numbers.}
+
+\begin{lstlisting}
+(*@\HLJLk{function}@*) (*@\HLJLnf{d2n}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{,}@*) (*@\HLJLn{y}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{,}@*) (*@\HLJLn{nCol}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)
+  (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Beware}@*) (*@\HLJLcs{of}@*) (*@\HLJLcs{0}@*) (*@\HLJLcs{vs.}@*) (*@\HLJLcs{1}@*) (*@\HLJLcs{indexing}@*)
+    (*@\HLJLk{return}@*) (*@\HLJLp{(}@*)(*@\HLJLn{x}@*) (*@\HLJLoB{-}@*) (*@\HLJLni{1}@*)(*@\HLJLp{)}@*) (*@\HLJLoB{*}@*) (*@\HLJLn{nCol}@*) (*@\HLJLoB{+}@*) (*@\HLJLn{y}@*) (*@\HLJLoB{-}@*) (*@\HLJLni{1}@*) (*@\HLJLoB{+}@*) (*@\HLJLni{1}@*)
+(*@\HLJLk{end}@*)
+
+(*@\HLJLk{function}@*) (*@\HLJLnf{d2n}@*)(*@\HLJLp{(}@*)(*@\HLJLn{l}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TLocation}@*)(*@\HLJLp{,}@*) (*@\HLJLn{nCol}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)
+    (*@\HLJLk{return}@*) (*@\HLJLnf{d2n}@*)(*@\HLJLp{(}@*)(*@\HLJLn{TLocation}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{simx}@*)(*@\HLJLp{,}@*) (*@\HLJLn{TLocation}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{simy}@*)(*@\HLJLp{,}@*) (*@\HLJLn{nCol}@*)(*@\HLJLp{)}@*)
+(*@\HLJLk{end}@*)
+
+(*@\HLJLk{function}@*) (*@\HLJLnf{d2n}@*)(*@\HLJLp{(}@*)(*@\HLJLn{p}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TPalette}@*)(*@\HLJLp{,}@*) (*@\HLJLn{nCol}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)
+    (*@\HLJLk{return}@*) (*@\HLJLnf{d2n}@*)(*@\HLJLp{(}@*)(*@\HLJLn{p}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{loc}@*)(*@\HLJLp{,}@*) (*@\HLJLn{nCol}@*)(*@\HLJLp{)}@*)
+(*@\HLJLk{end}@*)
+
+(*@\HLJLk{function}@*) (*@\HLJLnf{n2d}@*)(*@\HLJLp{(}@*)(*@\HLJLn{n}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{,}@*) (*@\HLJLn{nCol}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{Vector}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{{\}}}@*)
+  (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Beware}@*) (*@\HLJLcs{of}@*) (*@\HLJLcs{0}@*) (*@\HLJLcs{vs.}@*) (*@\HLJLcs{1}@*) (*@\HLJLcs{indexing}@*)
+    (*@\HLJLn{x}@*) (*@\HLJLoB{=}@*) (*@\HLJLni{1}@*) (*@\HLJLoB{+}@*) (*@\HLJLnf{div}@*)(*@\HLJLp{(}@*)(*@\HLJLn{n}@*) (*@\HLJLoB{-}@*) (*@\HLJLni{1}@*)(*@\HLJLp{,}@*) (*@\HLJLn{nCol}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{y}@*) (*@\HLJLoB{=}@*) (*@\HLJLni{1}@*) (*@\HLJLoB{+}@*) (*@\HLJLnf{rem}@*)(*@\HLJLp{(}@*)(*@\HLJLn{n}@*) (*@\HLJLoB{-}@*) (*@\HLJLni{1}@*)(*@\HLJLp{,}@*) (*@\HLJLn{nCol}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLk{return}@*) (*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{,}@*) (*@\HLJLn{y}@*)(*@\HLJLp{)}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+n2d (generic function with 1 method)
+\end{lstlisting}
+
+
+\subsection{$create\_list\_of\_parkings(n)$}
+Create $n$ parking positions with:
+
+\begin{itemize}
+\item All values are in standardised dimensions
+
+
+\item Number of parkings located next to sources of tasks in proportion of coming orders. Assume that this being done, equal probability of use is acceptable (no priority in the order of filling the parking).
+
+
+\item All different
+
+
+\item At least one per AGV
+
+
+\item Ensure parking positions do not prevent any traffic once an AGV is occupying it.
+
+\begin{itemize}
+\item WARNING: this is necessary to guarantee that searches will always find solution:
+
+\end{itemize}
+\end{itemize}
+
+\begin{lstlisting}
+(*@\HLJLk{function}@*) (*@\HLJLnf{create{\_}list{\_}parkings}@*)(*@\HLJLp{(}@*)(*@\HLJLn{M}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{AbstractVector}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{TParking}@*)(*@\HLJLp{{\}}}@*)
+    (*@\HLJLk{return}@*) (*@\HLJLp{[]}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+create(*@{{\_}}@*)list(*@{{\_}}@*)parkings (generic function with 1 method)
+\end{lstlisting}
+
+
+\subsection{$time\_2D(\mathbb{G}, a, b)$}
+Time the optimal paths in 2D from location $a$ to $b$ in a precomputed graph $\mathbb{G}$ using A*.
+
+Returns full path and total execution time.
+
+All dimensions are in simulation dimensions.
+
+
+\begin{lstlisting}
+(*@\HLJLk{function}@*) (*@\HLJLnf{time{\_}2D}@*)(*@\HLJLp{(}@*)(*@\HLJLn{G}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{SimpleDiGraph}@*)(*@\HLJLp{,}@*) (*@\HLJLn{posa}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TLocation}@*)(*@\HLJLp{,}@*) (*@\HLJLn{posb}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TLocation}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLk{return}@*) (*@\HLJLn{Nothing}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+time(*@{{\_}}@*)2D (generic function with 1 method)
+\end{lstlisting}
+
+
+\subsection{$create_task_pairing_times(listOfTasks)$}
+Precomputes the optimal time to go from one finished task to the end of another for any pairing of tasks. This is not symmetrical and calculated both ways.  If only a single task, nothing to do!
+
+
+\begin{lstlisting}
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{[CHECK:}@*) (*@\HLJLcs{do}@*) (*@\HLJLcs{we}@*) (*@\HLJLcs{need}@*) (*@\HLJLcs{to}@*) (*@\HLJLcs{include}@*) (*@\HLJLcs{the}@*) (*@\HLJLcs{path}@*) (*@\HLJLcs{in}@*) (*@\HLJLcs{each}@*) (*@\HLJLcs{result?]}@*)
+(*@\HLJLk{function}@*) (*@\HLJLnf{create{\_}task{\_}pairing{\_}times}@*)(*@\HLJLp{(}@*)
+    (*@\HLJLn{G}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{SimpleDiGraph}@*)(*@\HLJLp{,}@*)
+    (*@\HLJLn{listOfTasks}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{AbstractVector}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{TTask}@*)(*@\HLJLp{{\}},}@*)
+    (*@\HLJLn{nCol}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{AbstractVector}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{TTime}@*)(*@\HLJLp{{\}}}@*)
+
+    (*@\HLJLn{nTasks}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{length}@*)(*@\HLJLp{(}@*)(*@\HLJLn{listOfTasks}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Result}@*) (*@\HLJLcs{matrix}@*)
+    (*@\HLJLn{M}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{Array}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{TTime}@*)(*@\HLJLp{{\}}(}@*)(*@\HLJLn{undef}@*)(*@\HLJLp{,}@*) (*@\HLJLp{(}@*)(*@\HLJLn{nTasks}@*)(*@\HLJLp{,}@*) (*@\HLJLn{nTasks}@*)(*@\HLJLp{))}@*)
+
+    (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{TODO:}@*) (*@\HLJLcs{As}@*) (*@\HLJLcs{list}@*) (*@\HLJLcs{comprehension?}@*)
+    (*@\HLJLk{if}@*) (*@\HLJLn{nTasks}@*) (*@\HLJLoB{>}@*) (*@\HLJLni{1}@*)
+        (*@\HLJLk{for}@*) (*@\HLJLn{i}@*) (*@\HLJLoB{\ensuremath{\in}}@*) (*@\HLJLni{1}@*)(*@\HLJLoB{:}@*)(*@\HLJLn{nTasks}@*)
+            (*@\HLJLk{for}@*) (*@\HLJLn{j}@*) (*@\HLJLoB{\ensuremath{\in}}@*) (*@\HLJLni{1}@*)(*@\HLJLoB{:}@*)(*@\HLJLn{nTasks}@*)
+              (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Tasks}@*)
+                (*@\HLJLn{t1}@*) (*@\HLJLoB{=}@*) (*@\HLJLn{listOfTasks}@*)(*@\HLJLp{[}@*)(*@\HLJLn{i}@*)(*@\HLJLp{]}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{target}@*)
+                (*@\HLJLn{t2}@*) (*@\HLJLoB{=}@*) (*@\HLJLn{listOfTasks}@*)(*@\HLJLp{[}@*)(*@\HLJLn{j}@*)(*@\HLJLp{]}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{target}@*)
+
+                (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{nodes}@*) (*@\HLJLcs{at}@*) (*@\HLJLcs{the}@*) (*@\HLJLcs{end}@*) (*@\HLJLcs{of}@*) (*@\HLJLcs{task}@*) (*@\HLJLcs{i}@*) (*@\HLJLcs{and}@*) (*@\HLJLcs{at}@*) (*@\HLJLcs{the}@*) (*@\HLJLcs{end}@*) (*@\HLJLcs{of}@*) (*@\HLJLcs{task}@*) (*@\HLJLcs{j}@*)
+                (*@\HLJLn{n1}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{d2n}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t1}@*)(*@\HLJLp{,}@*) (*@\HLJLn{nCol}@*)(*@\HLJLp{)}@*)
+                (*@\HLJLn{n2}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{d2n}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t2}@*)(*@\HLJLp{,}@*) (*@\HLJLn{nCol}@*)(*@\HLJLp{)}@*)
+
+                (*@\HLJLn{M}@*)(*@\HLJLp{[}@*)(*@\HLJLn{i}@*)(*@\HLJLp{,}@*) (*@\HLJLn{j}@*)(*@\HLJLp{]}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{time{\_}2D}@*)(*@\HLJLp{(}@*)(*@\HLJLn{G}@*)(*@\HLJLp{,}@*) (*@\HLJLn{n1}@*)(*@\HLJLp{,}@*) (*@\HLJLn{n2}@*)(*@\HLJLp{)}@*)
+            (*@\HLJLk{end}@*)
+        (*@\HLJLk{end}@*)
+    (*@\HLJLk{end}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLn{M}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+create(*@{{\_}}@*)task(*@{{\_}}@*)pairing(*@{{\_}}@*)times (generic function with 1 method)
+\end{lstlisting}
+
+
+\subsection{$scale\_to\_simulation(object)$}
+Generic function to rescale the floor plan or object locations from standardised to simulation
+
+
+\begin{lstlisting}
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Convert}@*) (*@\HLJLcs{any}@*) (*@\HLJLcs{Float32}@*) (*@\HLJLcs{to}@*) (*@\HLJLcs{Int32.}@*) (*@\HLJLcs{Can}@*) (*@\HLJLcs{be}@*) (*@\HLJLcs{used}@*) (*@\HLJLcs{for}@*) (*@\HLJLcs{location}@*) (*@\HLJLcs{or}@*) (*@\HLJLcs{time}@*)
+(*@\HLJLk{function}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLp{,}@*) (*@\HLJLn{factor}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)
+    (*@\HLJLk{return}@*) (*@\HLJLnf{Int32}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{ceil}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*) (*@\HLJLoB{/}@*) (*@\HLJLn{factor}@*)(*@\HLJLp{))}@*)
+(*@\HLJLk{end}@*)
+
+(*@\HLJLk{function}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TTime}@*)(*@\HLJLp{,}@*) (*@\HLJLn{tStep}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TTime}@*)
+    (*@\HLJLn{r}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{deepcopy}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLn{r}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{simt}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{t}@*)(*@\HLJLp{,}@*) (*@\HLJLn{tStep}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLn{r}@*)
+(*@\HLJLk{end}@*)
+
+(*@\HLJLk{function}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{loc}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TLocation}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TLocation}@*)
+    (*@\HLJLn{l}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{deepcopy}@*)(*@\HLJLp{(}@*)(*@\HLJLn{loc}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{simx}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{loc}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{x}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{simy}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{loc}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{y}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLn{l}@*)
+(*@\HLJLk{end}@*)
+
+(*@\HLJLk{function}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{p}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TParking}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TParking}@*)
+    (*@\HLJLn{l}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{deepcopy}@*)(*@\HLJLp{(}@*)(*@\HLJLn{p}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{loc}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{p}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{loc}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLn{l}@*)
+(*@\HLJLk{end}@*)
+
+(*@\HLJLk{function}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{p}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TPalette}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TPalette}@*)
+    (*@\HLJLn{l}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{deepcopy}@*)(*@\HLJLp{(}@*)(*@\HLJLn{p}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{loc}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{p}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{loc}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLn{l}@*)
+(*@\HLJLk{end}@*)
+
+(*@\HLJLk{function}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TTask}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TTask}@*)
+    (*@\HLJLn{l}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{deepcopy}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{start}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{start}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{target}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{target}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLn{l}@*)
+(*@\HLJLk{end}@*)
+
+(*@\HLJLk{function}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{Vector}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{TTask}@*)(*@\HLJLp{{\}},}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{Vector}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{TTask}@*)(*@\HLJLp{{\}}}@*)
+    (*@\HLJLn{l}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{deepcopy}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLnf{map}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*) (*@\HLJLoB{->}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{),}@*) (*@\HLJLn{l}@*)(*@\HLJLp{)}@*)
+(*@\HLJLk{end}@*)
+
+(*@\HLJLk{function}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{a}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TAGV}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLp{,}@*) (*@\HLJLn{tStep}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TAGV}@*)
+    (*@\HLJLn{l}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{deepcopy}@*)(*@\HLJLp{(}@*)(*@\HLJLn{a}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{start}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{a}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{start}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{current}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{a}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{current}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{target}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{a}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{target}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{time}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{a}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{time}@*)(*@\HLJLp{,}@*) (*@\HLJLn{tStep}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{listTasks}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{a}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{listTasks}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{park}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{a}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{park}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLn{l}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+scale(*@{{\_}}@*)to(*@{{\_}}@*)simulation (generic function with 8 methods)
+\end{lstlisting}
+
+
+\subsection{$scale\_to\_standardised(object)$}
+Generic function to rescale the floor plan or object locations from simulation to standardised
+
+
+\begin{lstlisting}
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Convert}@*) (*@\HLJLcs{any}@*) (*@\HLJLcs{Float32}@*) (*@\HLJLcs{to}@*) (*@\HLJLcs{Int32.}@*) (*@\HLJLcs{Can}@*) (*@\HLJLcs{be}@*) (*@\HLJLcs{used}@*) (*@\HLJLcs{for}@*) (*@\HLJLcs{location}@*) (*@\HLJLcs{or}@*) (*@\HLJLcs{time}@*)
+(*@\HLJLk{function}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{v}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{,}@*) (*@\HLJLn{factor}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)
+    (*@\HLJLk{return}@*) (*@\HLJLnf{Float32}@*)(*@\HLJLp{(}@*)(*@\HLJLn{factor}@*) (*@\HLJLoB{*}@*) (*@\HLJLnf{Float32}@*)(*@\HLJLp{(}@*)(*@\HLJLn{v}@*)(*@\HLJLp{))}@*)
+(*@\HLJLk{end}@*)
+
+(*@\HLJLk{function}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TTime}@*)(*@\HLJLp{,}@*) (*@\HLJLn{tStep}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TTime}@*)
+    (*@\HLJLn{r}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{deepcopy}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLn{r}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{t}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{simt}@*)(*@\HLJLp{,}@*) (*@\HLJLn{tStep}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLn{r}@*)
+(*@\HLJLk{end}@*)
+
+(*@\HLJLk{function}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{loc}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TLocation}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TLocation}@*)
+    (*@\HLJLn{l}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{deepcopy}@*)(*@\HLJLp{(}@*)(*@\HLJLn{loc}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{simx}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{loc}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{x}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{simy}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{loc}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{y}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLn{l}@*)
+(*@\HLJLk{end}@*)
+
+(*@\HLJLk{function}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{p}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TParking}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TParking}@*)
+    (*@\HLJLn{l}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{deepcopy}@*)(*@\HLJLp{(}@*)(*@\HLJLn{p}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{loc}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{p}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{loc}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLn{l}@*)
+(*@\HLJLk{end}@*)
+
+(*@\HLJLk{function}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{p}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TPalette}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TPalette}@*)
+    (*@\HLJLn{l}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{deepcopy}@*)(*@\HLJLp{(}@*)(*@\HLJLn{p}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{loc}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{p}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{loc}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLn{l}@*)
+(*@\HLJLk{end}@*)
+
+(*@\HLJLk{function}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TTask}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TTask}@*)
+    (*@\HLJLn{l}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{deepcopy}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{start}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{start}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{target}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{target}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLn{l}@*)
+(*@\HLJLk{end}@*)
+
+(*@\HLJLk{function}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{Vector}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{TTask}@*)(*@\HLJLp{{\}},}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{Vector}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{TTask}@*)(*@\HLJLp{{\}}}@*)
+    (*@\HLJLn{l}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{deepcopy}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLnf{map}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*) (*@\HLJLoB{->}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{t}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{),}@*) (*@\HLJLn{l}@*)(*@\HLJLp{)}@*)
+(*@\HLJLk{end}@*)
+
+(*@\HLJLk{function}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{a}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TAGV}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLp{,}@*) (*@\HLJLn{tStep}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{TAGV}@*)
+    (*@\HLJLn{l}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{deepcopy}@*)(*@\HLJLp{(}@*)(*@\HLJLn{a}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{start}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{a}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{start}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{current}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{a}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{current}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{target}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{a}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{target}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{time}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{a}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{time}@*)(*@\HLJLp{,}@*) (*@\HLJLn{tStep}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{listTasks}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{a}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{listTasks}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{l}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{park}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{scale{\_}to{\_}standardised}@*)(*@\HLJLp{(}@*)(*@\HLJLn{a}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{park}@*)(*@\HLJLp{,}@*) (*@\HLJLn{gridSize}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLn{l}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+scale(*@{{\_}}@*)to(*@{{\_}}@*)standardised (generic function with 8 methods)
+\end{lstlisting}
+
+
+\section{Algorithm}
+\subsection{Expected inputs}
+All inputs are in Standardised dimensions.
+
+\begin{itemize}
+\item \[
+F
+\]
+: \emph{Required} Floor plan matrix
+
+
+\item \[
+ListAGV
+\]
+: \emph{Required}. Check list length >= 1
+
+
+\item \[
+ListTasks = []
+\]
+: \emph{Required}. List length can be 0. Must include the list of tasks that are already allocated at the start of the simulation.
+
+
+\item \[
+ListOfParking = create\_list\_of\_parkings(length(ListAGV))
+\]
+: \emph{Optional} List of parking slots. Created if missing.
+
+
+\item Speeds: \emph{Required} forward, backward, turn
+
+\end{itemize}
+\subsection{Wrapping}
+First call point is $optimise\_standardised\_units()$.
+
+\subsubsection{Timing and Sizing parameters}
+Estimate adequate time step $t_{step}$ to scaled matrix to $M$. [CHECK: Default to 200ms]
+
+Max simulation time $T_{Max}$: This time will be used when planning a path. It has to be long enough so that, given any configuration, A* will find a path from any current position, to achieve any task and go to any parking position. Currently 300s (converted to simulation time using $t_{step}$ in ${Step}_{Max}$). Track A* failures to check if long enough.
+
+\[
+{Step}_{Max} = T_{Max} / t_{step}
+\]
+is the depth of the 3D planning matrix.
+
+\[
+GridSize
+\]
+:
+
+\begin{itemize}
+\item size of each simulation square. AGV dimensions = +/- 1/2 width, +/- 1/2 length.
+
+
+\item Ensures never jumps over even max speed.
+
+\end{itemize}
+\subsubsection{Scale everything to Simulation dimensions}
+Rescale all relevant values from Standardised to Simulation:
+
+\begin{itemize}
+\item Matrix of the full floor plan: $M = Rescale(F)$
+
+
+\item Same for $ListOfParkings = [Parking_i]$, $\alpha_i$, $s_j$, $g_j$ to be appropriately scaled given $t_{step}$.
+
+\end{itemize}
+\subsubsection{Call main algo in simulation units}
+Call $optimise\_simulation\_units()$
+
+\subsubsection{Scale everything back to standardise units}
+Rescale all relevant values from Simulation to Standardised
+
+\subsubsection{Return}
+Results are returned in Standardised units.
+
+
+\begin{lstlisting}
+(*@\HLJLk{function}@*) (*@\HLJLnf{optimise{\_}standardise{\_}units}@*)(*@\HLJLp{(}@*)
+    (*@\HLJLn{F}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{AbstractMatrix}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{Float32}@*)(*@\HLJLp{{\}},}@*)
+    (*@\HLJLn{listAGVs}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{AbstractVector}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{TAGV}@*)(*@\HLJLp{{\}},}@*)
+    (*@\HLJLn{listTasks}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{AbstractVector}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{TTask}@*)(*@\HLJLp{{\}};}@*)
+    (*@\HLJLn{speedFwd}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLoB{=}@*)(*@\HLJLnfB{2.0f0}@*)(*@\HLJLp{,}@*)
+    (*@\HLJLn{speedBck}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLoB{=}@*)(*@\HLJLnfB{1.0f0}@*)(*@\HLJLp{,}@*)
+    (*@\HLJLn{speedTrn}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Float32}@*)(*@\HLJLoB{=}@*)(*@\HLJLnfB{0.5f0}@*)(*@\HLJLp{,}@*)
+    (*@\HLJLn{listParkings}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{AbstractVector}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{TParking}@*)(*@\HLJLp{{\}}}@*)(*@\HLJLoB{=}@*)(*@\HLJLnf{create{\_}list{\_}of{\_}parkings}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{length}@*)(*@\HLJLp{(}@*)(*@\HLJLn{listAGVs}@*)(*@\HLJLp{)))}@*)
+
+    (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{600}@*) (*@\HLJLcs{STEPS}@*) (*@\HLJLcs{-}@*) (*@\HLJLcs{MATRIX}@*) (*@\HLJLcs{DEPTH}@*)
+    (*@\HLJLn{StepMax}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{Int32}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{ceil}@*)(*@\HLJLp{(}@*)(*@\HLJLn{TMax}@*) (*@\HLJLoB{/}@*) (*@\HLJLn{TStep}@*)(*@\HLJLp{))}@*)
+
+    (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{GridSize}@*) (*@\HLJLcs{=}@*) (*@\HLJLcs{50}@*) (*@\HLJLcs{cm}@*)
+    (*@\HLJLn{GridSize}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{Int32}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{ceil}@*)(*@\HLJLp{(}@*)(*@\HLJLn{speedTrn}@*) (*@\HLJLoB{/}@*) (*@\HLJLn{TStep}@*)(*@\HLJLp{))}@*)
+    (*@\HLJLn{simAGVLength}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{Int32}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{ceil}@*)(*@\HLJLp{(}@*)(*@\HLJLn{AVGLength}@*) (*@\HLJLoB{/}@*) (*@\HLJLn{GridSize}@*)(*@\HLJLp{))}@*)
+    (*@\HLJLn{simAGVWidth}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{Int32}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{ceil}@*)(*@\HLJLp{(}@*)(*@\HLJLn{AVGWidth}@*) (*@\HLJLoB{/}@*) (*@\HLJLn{GridSize}@*)(*@\HLJLp{))}@*)
+
+    (*@\HLJLn{M}@*) (*@\HLJLoB{=}@*) @(*@\HLJLoB{.}@*) (*@\HLJLnf{Int32}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{ceil}@*)(*@\HLJLp{((}@*)(*@\HLJLnfB{1.0}@*) (*@\HLJLoB{/}@*) (*@\HLJLn{GridSize}@*)(*@\HLJLp{)}@*) (*@\HLJLoB{*}@*) (*@\HLJLn{F}@*)(*@\HLJLp{))}@*)
+
+    (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{FINALISE}@*) (*@\HLJLcs{RETURN}@*) (*@\HLJLcs{FORMAT}@*)
+    (*@\HLJLn{simulation{\_}optim}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{optimise{\_}standardise{\_}units}@*)(*@\HLJLp{(}@*)
+        (*@\HLJLn{M}@*)(*@\HLJLp{,}@*) (*@\HLJLn{StepMax}@*)(*@\HLJLp{,}@*)
+        (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{listAGVs}@*)(*@\HLJLp{),}@*)
+        (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{listTasks}@*)(*@\HLJLp{),}@*)
+        (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{speedFwd}@*)(*@\HLJLp{),}@*)
+        (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{speedBck}@*)(*@\HLJLp{),}@*)
+        (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{speedTrn}@*)(*@\HLJLp{),}@*)
+        (*@\HLJLnf{scale{\_}to{\_}simulation}@*)(*@\HLJLp{(}@*)(*@\HLJLn{listParkings}@*)(*@\HLJLp{))}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+optimise(*@{{\_}}@*)standardise(*@{{\_}}@*)units (generic function with 1 method)
+\end{lstlisting}
+
+
+\subsection{$optimise\_simulation\_units()$ - Preparation of the Main Loop}
+\subsubsection{Preamble}
+Each AGV will have:
+
+\begin{itemize}
+\item a list of tasks with a list of release time.
+
+\end{itemize}
+(BUSY WITH TASK \ensuremath{\endash}- RELEASE TIME)+ \ensuremath{\endash}- GO TO PARKING
+
+The number of busy times can be 0. Each AGV has a final release time.
+
+\subsubsection{Initialisation}
+\begin{itemize}
+\item Using $M$, precompute 2D graph $\mathbb{G}$.
+
+\end{itemize}
+
+\begin{lstlisting}
+(*@\HLJLk{function}@*) (*@\HLJLnf{pre{\_}computed{\_}2Dgraph}@*)(*@\HLJLp{(}@*)(*@\HLJLn{floorPlan}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{Matrix}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{{\}})}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{SimpleDiGraph}@*)
+
+    (*@\HLJLn{nRow}@*)(*@\HLJLp{,}@*) (*@\HLJLn{nCol}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{size}@*)(*@\HLJLp{(}@*)(*@\HLJLn{floorPlan}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Create}@*) (*@\HLJLcs{a}@*) (*@\HLJLcs{2D}@*) (*@\HLJLcs{graph}@*) (*@\HLJLcs{being}@*) (*@\HLJLcs{the}@*) (*@\HLJLcs{plan}@*) (*@\HLJLcs{matrix}@*) (*@\HLJLcs{with}@*) (*@\HLJLcs{nSlices}@*) (*@\HLJLcs{deep}@*) (*@\HLJLcs{with}@*) (*@\HLJLcs{enough}@*)
+    (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{nodes}@*)
+    (*@\HLJLn{G}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{SimpleDiGraph}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{d2n}@*)(*@\HLJLp{(}@*)(*@\HLJLn{nRow}@*)(*@\HLJLp{,}@*) (*@\HLJLn{nCol}@*)(*@\HLJLp{))}@*)
+
+    (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Create}@*) (*@\HLJLcs{all}@*) (*@\HLJLcs{horizontal}@*) (*@\HLJLcs{edges}@*)
+    (*@\HLJLk{for}@*) (*@\HLJLn{r}@*) (*@\HLJLoB{\ensuremath{\in}}@*) (*@\HLJLni{1}@*)(*@\HLJLoB{:}@*)(*@\HLJLn{nRow}@*)
+        (*@\HLJLk{for}@*) (*@\HLJLn{c}@*) (*@\HLJLoB{\ensuremath{\in}}@*) (*@\HLJLni{1}@*)(*@\HLJLoB{:}@*)(*@\HLJLp{(}@*)(*@\HLJLn{nCol}@*) (*@\HLJLoB{-}@*) (*@\HLJLni{1}@*)(*@\HLJLp{)}@*)
+            (*@\HLJLk{if}@*) (*@\HLJLp{(}@*)(*@\HLJLn{FloorPlan}@*)(*@\HLJLp{[}@*)(*@\HLJLn{r}@*)(*@\HLJLp{,}@*) (*@\HLJLn{c}@*)(*@\HLJLp{]}@*) (*@\HLJLoB{==}@*) (*@\HLJLni{0}@*)(*@\HLJLp{)}@*) (*@\HLJLoB{{\&}{\&}}@*) (*@\HLJLp{(}@*)(*@\HLJLn{FloorPlan}@*)(*@\HLJLp{[}@*)(*@\HLJLn{r}@*)(*@\HLJLp{,}@*) (*@\HLJLn{c}@*) (*@\HLJLoB{+}@*) (*@\HLJLni{1}@*)(*@\HLJLp{]}@*) (*@\HLJLoB{==}@*) (*@\HLJLni{0}@*)(*@\HLJLp{)}@*)
+                (*@\HLJLnf{add{\_}edge!}@*)(*@\HLJLp{(}@*)(*@\HLJLn{floorG}@*)(*@\HLJLp{,}@*) (*@\HLJLnf{d2n}@*)(*@\HLJLp{(}@*)(*@\HLJLn{r}@*)(*@\HLJLp{,}@*) (*@\HLJLn{c}@*)(*@\HLJLp{),}@*) (*@\HLJLnf{d2n}@*)(*@\HLJLp{(}@*)(*@\HLJLn{r}@*)(*@\HLJLp{,}@*) (*@\HLJLn{c}@*) (*@\HLJLoB{+}@*) (*@\HLJLni{1}@*)(*@\HLJLp{))}@*)
+            (*@\HLJLk{end}@*)
+        (*@\HLJLk{end}@*)
+    (*@\HLJLk{end}@*)
+
+    (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Create}@*) (*@\HLJLcs{all}@*) (*@\HLJLcs{vertical}@*) (*@\HLJLcs{edges}@*)
+    (*@\HLJLk{for}@*) (*@\HLJLn{c}@*) (*@\HLJLoB{\ensuremath{\in}}@*) (*@\HLJLni{1}@*)(*@\HLJLoB{:}@*)(*@\HLJLn{nCol}@*)
+        (*@\HLJLk{for}@*) (*@\HLJLn{r}@*) (*@\HLJLoB{\ensuremath{\in}}@*) (*@\HLJLni{1}@*)(*@\HLJLoB{:}@*)(*@\HLJLp{(}@*)(*@\HLJLn{nRow}@*) (*@\HLJLoB{-}@*) (*@\HLJLni{1}@*)(*@\HLJLp{)}@*)
+            (*@\HLJLk{if}@*) (*@\HLJLp{(}@*)(*@\HLJLn{FloorPlan}@*)(*@\HLJLp{[}@*)(*@\HLJLn{r}@*)(*@\HLJLp{,}@*) (*@\HLJLn{c}@*)(*@\HLJLp{]}@*) (*@\HLJLoB{==}@*) (*@\HLJLni{0}@*)(*@\HLJLp{)}@*) (*@\HLJLoB{{\&}{\&}}@*) (*@\HLJLp{(}@*)(*@\HLJLn{FloorPlan}@*)(*@\HLJLp{[}@*)(*@\HLJLn{r}@*) (*@\HLJLoB{+}@*) (*@\HLJLni{1}@*)(*@\HLJLp{,}@*) (*@\HLJLn{c}@*)(*@\HLJLp{]}@*) (*@\HLJLoB{==}@*) (*@\HLJLni{0}@*)(*@\HLJLp{)}@*)
+                (*@\HLJLnf{add{\_}edge!}@*)(*@\HLJLp{(}@*)(*@\HLJLn{floorG}@*)(*@\HLJLp{,}@*) (*@\HLJLnf{d2n}@*)(*@\HLJLp{(}@*)(*@\HLJLn{r}@*)(*@\HLJLp{,}@*) (*@\HLJLn{c}@*)(*@\HLJLp{),}@*) (*@\HLJLnf{d2n}@*)(*@\HLJLp{(}@*)(*@\HLJLn{r}@*) (*@\HLJLoB{+}@*) (*@\HLJLni{1}@*)(*@\HLJLp{,}@*) (*@\HLJLn{c}@*)(*@\HLJLp{))}@*)
+            (*@\HLJLk{end}@*)
+        (*@\HLJLk{end}@*)
+    (*@\HLJLk{end}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLn{G}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+pre(*@{{\_}}@*)computed(*@{{\_}}@*)2Dgraph (generic function with 1 method)
+\end{lstlisting}
+
+
+\begin{itemize}
+\item Using $M$, precompute $M_0$ with $T_{Max}$ slices.
+
+\end{itemize}
+
+\begin{lstlisting}
+(*@\HLJLk{function}@*) (*@\HLJLnf{pre{\_}computed{\_}3DMatrix}@*)(*@\HLJLp{(}@*)
+    (*@\HLJLn{M}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{AbstractMatrix}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{{\}},}@*)
+    (*@\HLJLn{nSlices}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{AbstractArray}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{{\}}}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLnf{repeat}@*)(*@\HLJLp{(}@*)(*@\HLJLn{M}@*)(*@\HLJLp{,}@*) (*@\HLJLn{nSlices}@*)(*@\HLJLp{)}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+pre(*@{{\_}}@*)computed(*@{{\_}}@*)3DMatrix (generic function with 1 method)
+\end{lstlisting}
+
+
+\begin{itemize}
+\item Initialise matrix $\tau$ with dimensions $length(ListTasks) \times length(ListTasks)$ Pre-calculate transfers from the end of one task to the end of another: $\tau_{i, j} = time\_2D(\mathbb{G}, g_i, g_j)$. That matrix is NOT symmetrical. It includes transfer time + and up/down fork movement.
+
+\end{itemize}
+\begin{itemize}
+\item ALERT: TASK IS NOT NECESSARILY WITH PALETTES.
+
+\begin{itemize}
+\item NEED TO CONSIDER PICKUP FROM CONVEYOR, TOP, BOTTOM, QUAY
+
+
+\item NEED TO CONSIDER EXACT POSITION AT THE END OF TASK (FACING SHELF, FACING ELSEWHERE?)
+
+
+\item NEED TO SEPARATE TIMES RELATED TO THE TASK PROVIDED BY THE QUEUING SYSTEM, VS. TIME CALCULATED FOR A GIVEN AGV MODEL.
+
+\end{itemize}
+\end{itemize}
+
+\begin{lstlisting}
+(*@\HLJLk{function}@*) (*@\HLJLnf{\ensuremath{\tau}}@*)(*@\HLJLp{(}@*)(*@\HLJLn{G}@*)(*@\HLJLp{,}@*) (*@\HLJLn{listOfTasks}@*)(*@\HLJLp{,}@*) (*@\HLJLn{i}@*)(*@\HLJLp{,}@*) (*@\HLJLn{j}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLn{nTasks}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{length}@*)(*@\HLJLp{(}@*)(*@\HLJLn{listOfTasks}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{M}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{Matrix}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{TTime}@*)(*@\HLJLp{{\}}(}@*)(*@\HLJLn{undef}@*)(*@\HLJLp{,}@*) (*@\HLJLp{(}@*)(*@\HLJLn{nTasks}@*)(*@\HLJLp{,}@*) (*@\HLJLn{nTasks}@*)(*@\HLJLp{))}@*)
+
+    (*@\HLJLk{for}@*) (*@\HLJLn{i}@*) (*@\HLJLoB{\ensuremath{\in}}@*) (*@\HLJLni{1}@*)(*@\HLJLoB{:}@*)(*@\HLJLn{nTasks}@*)
+        (*@\HLJLk{for}@*) (*@\HLJLn{j}@*) (*@\HLJLoB{\ensuremath{\in}}@*) (*@\HLJLni{1}@*)(*@\HLJLoB{:}@*)(*@\HLJLn{nTasks}@*)
+            (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Transfer}@*) (*@\HLJLcs{time}@*)
+            (*@\HLJLn{M}@*)(*@\HLJLp{[}@*)(*@\HLJLn{i}@*)(*@\HLJLp{,}@*) (*@\HLJLn{j}@*)(*@\HLJLp{]}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{time{\_}2D}@*)(*@\HLJLp{(}@*)(*@\HLJLn{G}@*)(*@\HLJLp{,}@*) (*@\HLJLn{listOfTasks}@*)(*@\HLJLp{[}@*)(*@\HLJLn{i}@*)(*@\HLJLp{]}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{target}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{loc}@*)(*@\HLJLp{,}@*) (*@\HLJLn{listOfTasks}@*)(*@\HLJLp{[}@*)(*@\HLJLn{j}@*)(*@\HLJLp{]}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{target}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{loc}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{.}@*)(*@\HLJLn{TTime}@*)
+        (*@\HLJLk{end}@*)
+    (*@\HLJLk{end}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLn{M}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+(*@\ensuremath{\tau}@*) (generic function with 1 method)
+\end{lstlisting}
+
+
+\begin{itemize}
+\item For each AGV, if it already has a task, calculate its completion time $time\ 2D(\mathbb{G}, \alpha_i, g_j)$
+
+
+\item Initialise the list of tasks of each AGV to just initial position $PlanningList = [\alpha_i=[\alpha_{i, 0}]]$. Each $\alpha_i$ will grow with a list of tasks $\alpha_i = [\alpha_{i, 0}, \tau_{i, 1}, , \tau_{i, 2}, ...]$
+
+
+\item \[
+PlanningList = [\alpha_i]
+\]
+will later contain a list of AGVs $\alpha_i$ each containing their allocated tasks (if any). It does not contain the list of parking locations which may vary from iteration to iteration.
+
+\end{itemize}
+\subsection{Start Main Loop}
+
+\begin{lstlisting}
+(*@\HLJLk{function}@*) (*@\HLJLnf{optimise{\_}simulation{\_}units}@*)(*@\HLJLp{(}@*)
+    (*@\HLJLn{M}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{AbstractMatrix}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{{\}},}@*)
+    (*@\HLJLn{StepMax}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{,}@*)
+    (*@\HLJLn{listAGVs}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{AbstractVector}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{TAGV}@*)(*@\HLJLp{{\}},}@*)
+    (*@\HLJLn{listTasks}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{AbstractVector}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{TTask}@*)(*@\HLJLp{{\}},}@*)
+    (*@\HLJLn{speedFwd}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{,}@*)
+    (*@\HLJLn{speedBck}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{,}@*)
+    (*@\HLJLn{speedTrn}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*)(*@\HLJLp{,}@*)
+    (*@\HLJLn{listParkings}@*)(*@\HLJLoB{::}@*)(*@\HLJLnf{AbstractVector}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{TParking}@*)(*@\HLJLp{{\}})}@*)
+
+    (*@\HLJLn{floorGraph}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{pre{\_}computed{\_}2Dgraph}@*)(*@\HLJLp{(}@*)(*@\HLJLn{M}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{M0}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{pre{\_}computed{\_}3DMatrix}@*)(*@\HLJLp{(}@*)(*@\HLJLn{M}@*)(*@\HLJLp{,}@*) (*@\HLJLn{StepMax}@*)(*@\HLJLp{)}@*)
+
+
+    (*@\HLJLn{unAllocatedTasks}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{deepcopy}@*)(*@\HLJLp{(}@*)(*@\HLJLn{listTasks}@*)(*@\HLJLp{)}@*)
+
+    (*@\HLJLk{while}@*) (*@\HLJLkc{true}@*)
+
+    (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Start}@*) (*@\HLJLcs{simulation}@*) (*@\HLJLcs{at}@*) (*@\HLJLcs{t}@*) (*@\HLJLcs{=}@*) (*@\HLJLcs{0}@*)
+        (*@\HLJLn{t}@*)(*@\HLJLoB{::}@*)(*@\HLJLn{Int32}@*) (*@\HLJLoB{=}@*) (*@\HLJLni{0}@*)
+
+
+
+    (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Replicate}@*) (*@\HLJLcs{a}@*) (*@\HLJLcs{Repeat-Until}@*) (*@\HLJLcs{loop}@*)
+        (*@\HLJLnf{isempty}@*)(*@\HLJLp{(}@*)(*@\HLJLn{unAllocatedTasks}@*)(*@\HLJLp{)}@*) (*@\HLJLoB{{\&}{\&}}@*) (*@\HLJLk{break}@*)
+    (*@\HLJLk{end}@*)
+
+    (*@\HLJLk{return}@*) (*@\HLJLn{Nothing}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+optimise(*@{{\_}}@*)simulation(*@{{\_}}@*)units (generic function with 1 method)
+\end{lstlisting}
+
+
+\[
+UnAllocatedTasks = ListTasks
+\]
+(That is the initial list of tasks)
+
+\textbf{REPEAT} \ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}
+
+\subsubsection{Optimal time for the best AGV/Task pair}
+Planning time starts at time $t::Int32=0$.
+
+\paragraph{Assuming some tasks are not allocated yet}
+\[
+ListTimePairings = []
+\]
+will contain the list of times: time(AGV $\alpha_i$, unallocated task $\tau_j$)
+
+\begin{itemize}
+\item For each Task $\tau_j$ in $UnAllocatedTasks != []$ (if $UnAllocatedTasks[]$ is not empty):
+
+\begin{itemize}
+\item For each $\alpha_i$:
+
+\begin{itemize}
+\item Take the time of where the AGV is: get the final position $current_i$ of $\alpha_i$, where $position_i$ is its initial position for the first iteration (if no task), or the position of its final release location $g_j$ given its list of tasks.
+
+
+\item Take the time to complete the new tasks: $offset_i = time\_2D(\mathbb{G}, \alpha_i, g_i)$ when the list of tasks is empty, $offset_i = \tau_{i, j}$ for $i$ being the last task in $\alpha_i$.
+
+
+\item Calculate $time(\alpha_i, g_j) = current_i + offset_i$
+
+
+\item Push the result (with all relevant information) into $ListTimePairings$
+
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\paragraph{Sort}
+\[
+ListTimePairings
+\]
+contains all the current $\alpha_i$ with each of them has been allocated a single new task. $ListTimePairings$ may be $[]$.
+
+\begin{itemize}
+\item Sort all times in $ListTimePairings$ in increasing order and find the shortest. This is the only pair AGV / Task (if any) that will be added to the planning..
+
+
+\item Add the task to that AGV with a time which is the one stored in $ListTimePairings$. Take the previous $PlanningList$ and replace the $\alpha_i$ which has a new task.
+
+
+\item Reorder all the AGVs in decreasing order of total (including updated) release time. Store into  $PlanningList$.
+
+\begin{itemize}
+\item By construction, that list will contain all the tasks which were previously allocated + only one additional task.
+
+
+\item The list should only contain entries where there is a new task added to already existing $\alpha_i$. In other words, choosing an entry will always guarantee that only a single new task is added to the Planning List.
+
+
+\item We now have a new list of $\alpha_i=[\alpha_{i, 0}, \tau_{i, 1}, , \tau_{i, 2}, ...]$ where AT MOST ONE of them has an additional task. This is the list to be sorted in decreasing order of total time (total release time + time to achieve new task). ONLY ONE if a task was available or NOTHING if the list of tasks was empty to start with.
+
+\end{itemize}
+
+\item Remove the newly allocated task from $UnAllocatedTasks[]$.
+
+\end{itemize}
+\subsubsection{Planning Loop}
+\[
+ListAllocationParking = []
+\]
+: To store all parking allocation as it happens one by one.
+
+\[
+PlanningListWithParkings
+\]
+: To store all the $\alpha_i$ with their respective parking before planning.
+
+\paragraph{Allocate parking locations}
+Given the list of tasks and the parking position already allocated in $ListAllocationParking$, create list of remaining parking positions accounting.
+
+Looping on the AGVs, allocate to each $\alpha_i$ the closest parking $Parking_i$ from its last $\tau_{i, j}$ in its list of tasks. Push each into $PlanningListWithParkings$.
+
+Sort $PlanningListWithParkings$ in decreasing time order.
+
+\paragraph{Start planning loop}
+\[
+ListFullPath = []
+\]
+: To store all paths one by one.
+
+\textbf{FOR} \ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}\ensuremath{\endash}
+
+For each $\alpha_i \in PlanningList$:
+
+\begin{itemize}
+\item \[
+M_i = M_{i-1}
+\]
+(Note that $M_0$ is precalculated)
+
+
+\item Add slices to $M_i$ so that at least $T_{Max}$ slices of buffer.
+
+\end{itemize}
+\textbf{Create detailed plan for $Path_i$}
+
+\begin{itemize}
+\item Reset the clock of the AGV: $t_i = 0$
+
+
+\item Plan $PlanningListWithParkings[i]$ on $M_i$. The planning must record the times of the final realease time at which all tasks for that $\alpha_i$ are completed [CHECK: Is the time of parking to be recorded as well]. The result is $FullPath$. If not solution, raise error to increase $T_{Max}$.
+
+
+\item Push $FullPath$ into $ListFullPath$
+
+
+\item Push found path $FullPath$ into $M_i$ (i.e. obstruct that path).
+
+
+\item \textbf{NEXT}
+
+\end{itemize}
+\_\_UNTIL \_\_ All tasks have been planned
+
+\[
+optimise\_simulation\_units
+\]
+: Return list of $\alpha_i=[\alpha_{i, 0}, \tau_{i, 1}, , \tau_{i, 2}, ...]$, and $ListFullPath$
+
+
+\begin{lstlisting}
+
+\end{lstlisting}
+
+
+
+\end{document}

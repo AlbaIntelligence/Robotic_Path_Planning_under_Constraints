@@ -1,0 +1,9 @@
+name = "AGVPlan"
+uuid = "e53fb2cb-14ff-4459-8daf-a3c5c930dc4e"
+authors = ["Emmanuel-R8 <emmanuel.rialland@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+SimpleGraphs = "55797a34-41de-5266-9ec1-32ac4eb504d3"
+Weave = "44d3d7a6-8a23-5bf8-98c5-b353f8df5ec9"

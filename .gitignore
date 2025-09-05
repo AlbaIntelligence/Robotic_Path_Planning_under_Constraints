@@ -1,0 +1,32 @@
+# Project files
+.Rproj.user
+**/*.Rproj
+.Rhistory
+**/.vscode
+**/Flatland*/*
+**/*.code-workspace
+**/backup.git.history
+
+# Drafts
+**/*.aux
+**/*.toc
+**/*.out
+**/*.log
+**/build_html/
+**/build_pdf/
+AGV_markup.pdf
+
+# Backups
+**/*~
+**/*bak
+
+# Misc
+.stfolder
+.ipynb_checkpoints
+
+# Private
+.env
+*.od?
+**/Proposal*
+./Private/
+**/Private/
